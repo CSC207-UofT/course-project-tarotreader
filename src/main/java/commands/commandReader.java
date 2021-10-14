@@ -1,4 +1,4 @@
 package commands;
 
-public class commandReader {
+public interface commandReader {
 }

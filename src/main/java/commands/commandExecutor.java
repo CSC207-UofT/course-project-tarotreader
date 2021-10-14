@@ -1,4 +1,5 @@
 package commands;
 
-public class commandExecutor {
+public interface commandExecutor {
+
 }
