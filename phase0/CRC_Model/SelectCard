@@ -1,0 +1,16 @@
+Class name: SelectCard
+Parent class: Command
+
+Responsibilities:
+* SelectTopic - View the cards based on the topic selected
+
+* ViewDeck - (View the cards selected from a particular topic)
+
+* Limit for number of selected cards (general reading = 3)
+
+* Once a card is picked it cannot be picked again
+
+Collaborators:
+* SpreadManager
+* SelectSpread
+* ShuffleAction
