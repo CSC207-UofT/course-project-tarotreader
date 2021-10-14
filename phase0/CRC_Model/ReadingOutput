@@ -2,9 +2,9 @@ Class name: ReadingOutput
 Parent class: Command
 
 Responsibilities:
-* CheckCard (checks data present on selected cards)
+* CheckCard (checks data present on the selected cards)
 
-* DisplayCard (display selected card to users)
+* DisplayCard (display selected card to users) eg 3cards selected display each to user.
 
 Collaborators:
 * LogReading

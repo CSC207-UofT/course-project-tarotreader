@@ -2,7 +2,7 @@ Class name: SelectCard
 Parent class: Command
 
 Responsibilities:
-* SelectTopic - View the cards based on the topic selected
+* SelectTopic - View the cards based on the topic selected (eg. love, growth)
 
 * ViewDeck - (View the cards selected from a particular topic)
 
