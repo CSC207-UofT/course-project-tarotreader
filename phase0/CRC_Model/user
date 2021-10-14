@@ -16,5 +16,3 @@ User: (not sure)
 
 ReadingLogManager: Gets the previous readings or starts a new reading
 
-class name: ReadingLogger;
-parent class: UserCase;
