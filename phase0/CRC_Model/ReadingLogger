@@ -3,13 +3,13 @@ parent class: useCase;
 
 *responsibility
 
-addReading: adds readings for the user
+- addReading: adds readings for the user
 
-logReading: logs the user into readings
+- logReading: logs the user into readings
 
-discardReading: Clears the readings
+- discardReading: Clears the readings
 
 
 *collaborators
 
-ReadingLog:
+- ReadingLog:
