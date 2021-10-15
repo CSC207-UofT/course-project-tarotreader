@@ -25,4 +25,10 @@ public class card{
         this.meaning = meaning;
         this.isReversed = false;
     }
+    public String getMeaning(){
+        return this.meaning;
+    }
+    public String getName(){
+        return this.name;
+    }
 }
