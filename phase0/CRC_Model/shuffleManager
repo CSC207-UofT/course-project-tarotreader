@@ -1,0 +1,10 @@
+class name: shuffleManager;
+parent class: controllers;
+
+*responsibility
+copies the deck, and calls shuffler to shuffle the created copy.
+
+
+*collaborator
+deck
+shuffler

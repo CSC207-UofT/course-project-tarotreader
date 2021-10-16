@@ -1,0 +1,16 @@
+class name: UserManager;
+parent class: Controller;
+
+*responsibility
+signIN: sings in the user to the system
+
+Register: Can register a new user to the system
+
+enterDateBirth: takes the date of birth when registering a new user
+
+getReadingLog: gets the log readings from which a user can reading from
+
+*collaborator
+User: (not sure)
+
+ReadingLogManager: Gets the previous readings or starts a new reading

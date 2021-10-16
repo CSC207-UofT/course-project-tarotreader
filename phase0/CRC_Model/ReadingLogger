@@ -1,0 +1,15 @@
+class readingLogger;
+parent class: useCase;
+
+*responsibility
+
+addReading: adds readings for the user
+
+logReading: logs the user into readings
+
+discardReading: Clears the readings
+
+
+*collaborators
+
+ReadingLog

@@ -16,4 +16,16 @@ public class spread {
         this.numberOfCards = Integer.parseInt(numberOfCards);
         this.positionMeaning = positionMeaning;
     }
+
+    public String getSpreadName(){
+        return this.spreadName;
+    }
+
+    public int getNumCards(){
+        return this.numberOfCards;
+    }
+
+    public String getPositionMeanings(){
+        return this.positionMeaning;
+    }
 }
