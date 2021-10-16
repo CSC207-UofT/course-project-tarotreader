@@ -1,18 +1,15 @@
 package entities;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 public class user {
     String username;
     String birthday;
-    ArrayList readingLog;
-    public user(String username, int year, int month, int day){
+    readingLog readingLog;
+    public user(String username, int year, int month, int day, readingLog r){
         this.username = username;
         this.birthday = year + "/" + month + "/" + day;
-        this.readingLog = new ArrayList<String>();
+        this.readingLog = r;
     }
 
     public String getUsername(){
