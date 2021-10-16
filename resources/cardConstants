@@ -1,0 +1,78 @@
+The Fool, 0, true, tbd
+The Magician, 1, true, tbd
+The High Priestess, 2, true, tbd
+The Empress, 3, true, tbd
+The Emperor, 4, true, tbd
+The The Heirophant, 5, true, tbd
+The Lovers, 6, true, tbd
+The Chariot, 7, true, tbd
+Strength, 8, true, tbd
+The Hermit, 9, true, tbd
+Wheel of Fortune, 10, true, tbd
+Justice, 11, true, tbd
+The Hanged Man, 12, true, tbd
+Death, 13, true, tbd
+Temperance, 14, true, tbd
+The Devil, 15, true, tbd
+The Tower, 16, true, tbd
+The Star 17, true, tbd
+The Moon, 18, true, tbd
+The Sun, 19, true, tbd
+Judgement, 20, true, tbd
+The World, 21, true, tbd
+Ace of Wands, 1, false, wands, tbd
+Two of Wands, 2, false, wands, tbd
+Three of Wands, 3, false, wands, tbd
+Four of Wands, 4, false, wands, tbd
+Five of Wands, 5, false, wands, tbd
+Six of Wands, 6, false, wands, tbd
+Seven of Wands, 7, false, wands, tbd
+Eight of Wands, 8, false, wands, tbd
+Nine of Wands, 9, false, wands, tbd
+Ten of Wands, 10, false, wands, tbd
+Page of Wands, 11, false, wands, tbd
+Knight of Wands, 12, false, wands, tbd
+Queen of Wands, 13, false, wands, tbd
+King of Wands, 14, false, wands, tbd
+Ace of Cups, 1, false, cups, tbd
+Two of Cups, 2, false, cups, tbd
+Three of Cups, 3, false, cups, tbd
+Four of Cups, 4, false, cups, tbd
+Five of Cups, 5, false, cups, tbd
+Six of Cups, 6, false, cups, tbd
+Seven of Cups, 7, false, cups, tbd
+Eight of Cups, 8, false, cups, tbd
+Nine of Cups, 9, false, cups, tbd
+Ten of Cups, 10, false, cups, tbd
+Page of Cups, 11, false, cups, tbd
+Knight of Cups, 12, false, cups, tbd
+Queen of Cups, 13, false, cups, tbd
+King of Cups, 14, false, cups, tbd
+Ace of Swords, 1, false, swords, tbd
+Two of Swords, 2, false, swords, tbd
+Three of Swords, 3, false, swords, tbd
+Four of Swords, 4, false, swords, tbd
+Five of Swords, 5, false, swords, tbd
+Six of Swords, 6, false, swords, tbd
+Seven of Swords, 7, false, swords, tbd
+Eight of Swords, 8, false, swords, tbd
+Nine of Swords, 9, false, swords, tbd
+Ten of Swords, 10, false, swords, tbd
+Page of Swords, 11, false, swords, tbd
+Knight of Swords, 12, false, swords, tbd
+Queen of Swords, 13, false, swords, tbd
+King of Swords, 14, false, swords, tbd
+Ace of Pentacles, 1, false, pentacles, tbd
+Two of Pentacles, 2, false, pentacles, tbd
+Three of Pentacles, 3, false, pentacles, tbd
+Four of Pentacles, 4, false, pentacles, tbd
+Five of Pentacles, 5, false, pentacles, tbd
+Six of Pentacles, 6, false, pentacles, tbd
+Seven of Pentacles, 7, false, pentacles, tbd
+Eight of Pentacles, 8, false, pentacles, tbd
+Nine of Pentacles, 9, false, pentacles, tbd
+Ten of Pentacles, 10, false, pentacles, tbd
+Page of Pentacles, 11, false, pentacles, tbd
+Knight of Pentacles, 12, false, pentacles, tbd
+Queen of Pentacles, 13, false, pentacles, tbd
+King of Pentacles, 14, false, pentacles, tbd
