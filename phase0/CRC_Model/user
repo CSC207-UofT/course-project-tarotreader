@@ -1,18 +1,17 @@
 
-class name: UserManager;
-parent class: Controller;
+class name: user;
+parent class: entity;
 
 *responsibility
-signIN: sings in the user to the system
+Stores information about the username, the birthdate and the readingLog of the user.
 
-Register: Can register a new user to the system
+getUsername: gets the username of a user.
 
-enterDateBirth: takes the date of birth when registering a new user
+getBirthday: gets the birthdate of a user.
 
-getReadingLog: gets the log readings from which a user can reading from
+getReadingLog: gets the readingLog of a user.
 
 *collaborator
-User: (not sure)
-
-ReadingLogManager: Gets the previous readings or starts a new reading
+readingLogManager
+readingLog
 
