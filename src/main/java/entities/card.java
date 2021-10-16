@@ -25,10 +25,12 @@ public class card{
         this.meaning = meaning;
         this.isReversed = false;
     }
+
+
     public String getMeaning(){
         return this.meaning;
     }
-    public static String getName(){
+    public String getName(){
         return this.name;
     }
 }
