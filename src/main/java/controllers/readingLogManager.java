@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 
-public class ReadingLogManager {
+public class readingLogManager {
     private static Map<user, readingLog> logs = new HashMap<user, readingLog>();
 
     // If the user does not have a reading log, returns null.
