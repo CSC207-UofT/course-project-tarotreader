@@ -2,6 +2,7 @@ package useCases;
 
 import entities.card;
 import java.util.ArrayList;
+=======
 import controllers.cardPicker;
 
 public class tarotReader{

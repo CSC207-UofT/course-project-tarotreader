@@ -14,6 +14,9 @@ public class deck{
         }
     }
 
+    public static ArrayList<card> getDeck(){
+        return cardList;
+    }
     public static void main(String[] args) {
         System.out.println(cardList.get(77));
     }
