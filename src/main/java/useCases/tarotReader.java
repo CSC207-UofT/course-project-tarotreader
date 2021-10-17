@@ -1,8 +1,9 @@
 package useCases;
 
 import java.util.ArrayList;
+import entities.card;
 
-public class tarotReader extends card{
+public class tarotReader{
     public ArrayList<card> chosenCards;
     public ArrayList<String> reading;
     public tarotReader(ArrayList<card> chosenCards){
@@ -10,7 +11,7 @@ public class tarotReader extends card{
         this.reading = new ArrayList<>(chosenCards.size());
         int i = 0;
         for (card c: chosenCards){
-            this.reading.set(i, c.getMeaning);
+            this.reading.set(i, c.getMeaning());
             i ++;
         }
     }

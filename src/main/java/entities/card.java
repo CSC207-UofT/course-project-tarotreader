@@ -28,7 +28,7 @@ public class card{
     public String getMeaning(){
         return this.meaning;
     }
-    public static String getName(){
+    public String getName(){
         return this.name;
     }
 }
