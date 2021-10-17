@@ -1,0 +1,5 @@
+Class name: spreads
+Responsibilities:
+* holds array list of all spread objects
+Collaborators:
+None
