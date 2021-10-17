@@ -9,13 +9,11 @@ public class commandExecutor {
      * @throws Exeption if any of the provided commands/arguments is invalid
      */
 
-    public String executeCommand(IShellState shellState string commandLine)
+    public String executeCommand(IShellState Shuffler string commandLine)
             throws Exeption{
-        shellState.addHistory(commandLine);
-        if (commandLine.equals("")){
-            return "";
-        }
-
+        Shuffler.addHistory(commandLine);
+        commandLine.equals("");
+        return "";
     }
 
 }
