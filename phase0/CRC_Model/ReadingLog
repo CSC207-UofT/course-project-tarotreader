@@ -1,0 +1,13 @@
+class name: ReadingLog;
+parent class: None;
+
+*responsibility
+- getReadings: returns the readings of the reading log
+- addToLog: adds a new reading to the reading log.
+- toString: Returns a string representation of the reading log
+
+
+*collaborator
+
+- TarotReader
+

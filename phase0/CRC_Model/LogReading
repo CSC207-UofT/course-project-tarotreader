@@ -1,0 +1,11 @@
+class name: LogReading;
+parent class: None;
+
+*responsibility
+- log: logs the last reading to the user's reading log.
+
+*collaborator
+
+- ReadingLogManager: Uses the logReading method to log readings.
+
+- TarotReader: Gets the previous readings or starts a new reading
