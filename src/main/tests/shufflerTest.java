@@ -15,8 +15,8 @@ public class shufflerTest {
     public void testShuffler() {
         try {
             ArrayList<card> origDeck = deck.getDeck();
-            ArrayList<card> shuffledDeck1 = shuffler.shuffleDeck();
-            ArrayList<card> shuffledDeck2 = shuffler.shuffleDeck();
+            ArrayList<card> shuffledDeck1 = shuffler.shuffleDeck(3);
+            ArrayList<card> shuffledDeck2 = shuffler.shuffleDeck(3);
             assertNotEquals(shuffledDeck1, shuffledDeck2);
             assertNotEquals(origDeck, shuffledDeck2);
             assertNotEquals(origDeck, shuffledDeck1);

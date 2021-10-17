@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class cardPicker {
 
-    private static final ArrayList<card> shuffledDeck = shuffler.shuffleDeck();
+    private static final ArrayList<card> shuffledDeck = shuffleManager.shuffleDeck(3);
     private static ArrayList<card> pickedCards = new ArrayList<>();
     private static final Random rand = new Random();
     private static final int index1 = rand.nextInt(78);
