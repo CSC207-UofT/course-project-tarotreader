@@ -1,0 +1,5 @@
+Class Name: spreadInit
+Responsibilities:
+* reads cardConstants file and loops through lines to initialize spread objects
+Collaborators:
+* spread

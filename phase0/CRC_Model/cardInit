@@ -1,0 +1,5 @@
+Class Name: CardInit
+Responsibilities:
+* Reads cardConstants file and loops through it to initialize every card
+Collaborators:
+* Card
