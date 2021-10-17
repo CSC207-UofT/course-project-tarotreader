@@ -1,0 +1,10 @@
+class name: shuffler
+parent class: useCase
+
+*responsibility
+
+- shuffler: shuffles the deck of cards
+
+*collaborator
+
+- deck
