@@ -2,9 +2,9 @@ class name: shuffleManager;
 parent class: controllers;
 
 *responsibility
-copies the deck, and calls shuffler to shuffle the created copy.
-
+extends the class shuffler to call the shuffleDeck method.
+-shuffleNTimes(): calls the shuffleDeck method n times, and raises an exception if the user inputs an invalid number.
 
 *collaborator
-deck
+card
 shuffler
