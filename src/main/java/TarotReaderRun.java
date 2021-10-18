@@ -22,7 +22,7 @@ public class TarotReaderRun {
         }
         ArrayList<Card> chosenCards = CardPicker.getPickedCards(shuffledDeck);
         TarotReader reading = new TarotReader(chosenCards);
-        System.out.println("You have chosen a " + spread.getSpreadName() + ". " + reading.toString());
+        System.out.println("You have chosen a " + spread.getSpreadName() + ". \n" + reading.toString());
         ReadingLogManager.addLog(newUser);
         ReadingLogManager.logReading(newUser, reading);
         ReadingLog readingLog = newUser.getReadingLog();

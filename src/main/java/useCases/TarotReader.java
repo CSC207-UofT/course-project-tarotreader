@@ -3,12 +3,15 @@ package useCases;
 import entities.Card;
 import entities.User;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class TarotReader {
     public ArrayList<String> reading;
     public TarotReader(ArrayList<Card> chosenCards){
-        this.reading = new ArrayList<>(chosenCards.size());
+        /*this.reading = new ArrayList<>(chosenCards.size());*/
+        this.reading = new ArrayList<>();
+        System.out.println("You have chosen " + chosenCards.size() + " cards.");
         for (Card c: chosenCards){
             this.reading.add(c.getMeaning());
         }
