@@ -1,6 +1,6 @@
 package entities;
 
-public class Card {
+public class Card{
     /***
      *
      */
@@ -10,7 +10,7 @@ public class Card {
     private boolean isMajor;
     private String suit;
     private String meaning;
-    public Card(String name, String number, String isMajor, String meaning){
+    public Card(String name, String number,  String isMajor, String meaning){
         this.name = name;
         this.number = Integer.parseInt(number);
         this.isMajor = Boolean.parseBoolean(isMajor);

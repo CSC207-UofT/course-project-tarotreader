@@ -1,0 +1,9 @@
+class name: ShuffleManager;
+
+*responsibility
+extends the class shuffler to call the shuffleDeck method.
+-shuffleNTimes(): calls the shuffleDeck method n times, and raises an exception if the user inputs an invalid number.
+
+*collaborator
+card
+shuffler

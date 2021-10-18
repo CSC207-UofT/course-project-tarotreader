@@ -4,6 +4,8 @@ import controllers.ShuffleManager;
 import controllers.SpreadManager;
 import entities.*;
 import useCases.TarotReader;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class TarotReaderRun {
@@ -26,6 +28,6 @@ public class TarotReaderRun {
         ReadingLogManager.addLog(newUser);
         ReadingLogManager.logReading(newUser, reading);
         ReadingLog readingLog = newUser.getReadingLog();
-        System.out.println("Your reading log: \n" + readingLog.toString());
+        System.out.println(readingLog.toString());
     }
 }

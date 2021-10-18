@@ -1,10 +1,8 @@
 class name: shuffler
-parent class: useCase
 
 *responsibility
 
-- shuffler: creates a clone of deck and shuffles a specified number of times, given from ShuffleManager.
-Returns a shuffled deck.
+shuffleDeck: creates a clone of the deck and shuffles the clone.
 
 *collaborator
 

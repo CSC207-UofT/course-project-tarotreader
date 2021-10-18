@@ -1,11 +1,14 @@
-class name: TarotReader;
+class name: tarotReader;
+parent class: useCase;
 
 *responsibility
-
-- getMeaning: gets the meaning of each card
-
-- generateReading: generates the reading for this reading
+Gets the meaning of each card. Since the number of cards chosen will change according to the user, the number of cards
+to get the meaning from increases or decreases. So, it should be flexible. It also generates the reading using the
+toString method for the tarotReader object. Generating the meaning out of the chosen cards will be developed in the
+future.
+-toString method: takes the meaning of the cards and creates a structured reading.
 
 *collaborator
-- CardPicker
+
 - card
+- cardPicker

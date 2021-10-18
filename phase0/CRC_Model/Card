@@ -1,5 +1,9 @@
 Class name: Card
+
 Responsibilities:
 * Contains constructors for card objects
+- getMeaning: gets the meaning for a card
+- getName: gets the name of the card
+
 Collaborators:
 None

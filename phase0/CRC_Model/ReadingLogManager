@@ -1,0 +1,18 @@
+class name: ReadingLogManager
+parent class: None
+package: controllers
+
+*responsibility
+- viewLog: views the log of a user
+
+- logReading: log a new reading to the user's reading log
+
+- addLog: Adds the user-log pair to the logs map.
+
+*collaborator
+
+- User
+
+- TarotReader
+
+- ReadingLog

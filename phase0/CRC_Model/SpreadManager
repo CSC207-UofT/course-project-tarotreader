@@ -1,0 +1,9 @@
+class name: SpreadManager;
+parent class: None;
+package: controllers
+
+*responsibility
+chooseSpread: Returns which spread should be used
+
+*collaborator
+spread
