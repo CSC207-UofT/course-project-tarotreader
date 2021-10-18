@@ -1,3 +1,7 @@
+import controllers.CardPicker;
+import controllers.ReadingLogManager;
+import controllers.ShuffleManager;
+import controllers.SpreadManager;
 import entities.*;
 import useCases.TarotReader;
 
