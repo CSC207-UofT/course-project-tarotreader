@@ -1,5 +1,4 @@
-class name: shuffleManager;
-parent class: controllers;
+class name: ShuffleManager;
 
 *responsibility
 extends the class shuffler to call the shuffleDeck method.
