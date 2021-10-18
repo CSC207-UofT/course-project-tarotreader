@@ -1,5 +1,5 @@
+We have not implemented this class yet, but we will.
 class name: UserManager;
-parent class: Controller;
 
 *responsibility
 signIN: sings in the user to the system
