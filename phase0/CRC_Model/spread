@@ -1,5 +1,9 @@
 Class Name: spread
 Responsibilities:
 * contains constructor for spread object
+getSpreadName: gets the name of the chosen spread
+getNumCards: gets the number of cards for the chosen spread
+getPositionMeanings: gets the meaning of the position for the chosen spread
+
 Collaborators:
 None
