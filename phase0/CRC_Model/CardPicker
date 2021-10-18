@@ -3,9 +3,10 @@ Responsibilities:
 
 * Picks the appropriate amount of cards for the selected spread from shuffled deck
 * returns arrayList of picked cards
+
 Collaborators:
 
 * card
 * shuffler
-* spreadManager
+
 
