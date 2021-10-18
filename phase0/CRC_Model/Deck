@@ -1,0 +1,15 @@
+class: Deck;
+parent class: Entities;
+
+*responsibility
+
+- Using cardInit to differentiate between the types of cards (Major and Minor) in the deck.
+
+- Calls upon cardInit to generate a list of cards.
+
+
+*collaborators
+
+- CardInit
+- Card
+- cardConstants.txt (as a source information file)
