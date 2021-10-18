@@ -1,19 +1,16 @@
 package useCases;
 
-import entities.card;
-import java.util.ArrayList;
-import controllers.cardPicker;
+import entities.Card;
+import entities.User;
 
-public class tarotReader{
-    public ArrayList<card> chosenCards;
+import java.util.ArrayList;
+
+public class TarotReader {
     public ArrayList<String> reading;
-    public tarotReader(){
-        this.chosenCards = cardPicker.getPickedCards();
+    public TarotReader(ArrayList<Card> chosenCards){
         this.reading = new ArrayList<>(chosenCards.size());
-        int i = 0;
-        for (card c: chosenCards){
-            this.reading.set(i, c.getMeaning());
-            i ++;
+        for (Card c: chosenCards){
+            this.reading.add(c.getMeaning());
         }
     }
     @Override
