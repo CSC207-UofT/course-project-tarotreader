@@ -1,9 +1,8 @@
 class name: shuffler
-parent class: useCase
 
 *responsibility
 
-- shuffler: shuffles the deck of cards
+shuffleDeck: creates a clone of the deck and shuffles the clone.
 
 *collaborator
 
