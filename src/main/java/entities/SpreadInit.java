@@ -6,8 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class spreadInit{
-    private static ArrayList<spread> spreadList = new ArrayList<>();
+public class SpreadInit {
+    private static ArrayList<Spread> spreadList = new ArrayList<>();
     private static BufferedReader SpreadReader;
 
     static {
@@ -18,18 +18,18 @@ public class spreadInit{
         }
     }
 
-    public spreadInit() throws FileNotFoundException {
+    public SpreadInit() throws FileNotFoundException {
     }
 
-    public static ArrayList<spread> getSpreads() throws IOException {
+    public static ArrayList<Spread> getSpreads() throws IOException {
         String line;
         while ((line = SpreadReader.readLine()) != null){
             String[] elem = line.split(",");
-            spread newSpread;
+            Spread newSpread;
             if(elem.length == 2){
-                newSpread = new spread(elem[0], elem[1]);
+                newSpread = new Spread(elem[0], elem[1]);
             }else{
-                newSpread = new spread(elem[0], elem[1], elem[2]);
+                newSpread = new Spread(elem[0], elem[1], elem[2]);
             }
             spreadList.add(newSpread);
 

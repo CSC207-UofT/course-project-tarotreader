@@ -1,12 +1,11 @@
-class name: tarotReader;
-parent class: useCase;
+class name: TarotReader;
 
 *responsibility
 
 - getMeaning: gets the meaning of each card
 
-- generateReading: generate the reading
+- generateReading: generates the reading for this reading
 
 *collaborator
-
+- CardPicker
 - card

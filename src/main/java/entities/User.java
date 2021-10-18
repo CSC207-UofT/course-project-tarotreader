@@ -1,12 +1,12 @@
 package entities;
 
 
-public class user {
+public class User {
     String username;
     String birthday;
-    readingLog readingLog;
+    ReadingLog readingLog;
 
-    public user(String username, int year, int month, int day, readingLog r) {
+    public User(String username, int year, int month, int day, ReadingLog r) {
         this.username = username;
         this.birthday = year + "/" + month + "/" + day;
         this.readingLog = r;
@@ -20,7 +20,7 @@ public class user {
         return this.birthday;
     }
 
-    public readingLog getReadingLog() {
+    public ReadingLog getReadingLog() {
         return this.readingLog; }
 
 }

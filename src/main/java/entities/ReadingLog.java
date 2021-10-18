@@ -1,29 +1,29 @@
 package entities;
-import useCases.tarotReader;
+import useCases.TarotReader;
 import java.util.List;
 import java.util.ArrayList;
 
-public class readingLog {
-    private List<tarotReader> readings;
-    private user belongingUser;
+public class ReadingLog {
+    private List<TarotReader> readings;
+    private User belongingUser;
 
-    public readingLog(user user) {
+    public ReadingLog(User user) {
         this.belongingUser = user;
-        this.readings = new ArrayList<tarotReader>();
+        this.readings = new ArrayList<TarotReader>();
     }
 
-    public List<tarotReader> getReadings() {
+    public List<TarotReader> getReadings() {
         return this.readings;
     }
 
-    public void addToLog(tarotReader reading) {
+    public void addToLog(TarotReader reading) {
         readings.add(reading);
     }
 
     @Override
     public String toString() {
         StringBuilder logs = new StringBuilder();
-        for (tarotReader reading: readings) {
+        for (TarotReader reading: readings) {
             logs.append(reading.toString());
             logs.append("\n");
         }

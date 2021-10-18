@@ -3,7 +3,8 @@ parent class: useCase
 
 *responsibility
 
-- shuffler: shuffles the deck of cards
+- shuffler: creates a clone of deck and shuffles a specified number of times, given from ShuffleManager.
+Returns a shuffled deck.
 
 *collaborator
 

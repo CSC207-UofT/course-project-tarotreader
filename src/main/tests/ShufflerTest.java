@@ -1,22 +1,19 @@
-import entities.card;
-import entities.deck;
-import org.junit.Before;
-import org.junit.After;
+import entities.Card;
+import entities.Deck;
 import org.junit.Test;
-import useCases.shuffler;
+import useCases.Shuffler;
 
 import static org.junit.Assert.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class shufflerTest {
+public class ShufflerTest {
     @Test
     public void testShuffler() {
         try {
-            ArrayList<card> origDeck = deck.getDeck();
-            ArrayList<card> shuffledDeck1 = shuffler.shuffleDeck(3);
-            ArrayList<card> shuffledDeck2 = shuffler.shuffleDeck(3);
+            ArrayList<Card> origDeck = Deck.getDeck();
+            ArrayList<Card> shuffledDeck1 = Shuffler.shuffleDeck(3);
+            ArrayList<Card> shuffledDeck2 = Shuffler.shuffleDeck(3);
             assertNotEquals(shuffledDeck1, shuffledDeck2);
             assertNotEquals(origDeck, shuffledDeck2);
             assertNotEquals(origDeck, shuffledDeck1);

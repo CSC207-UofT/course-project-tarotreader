@@ -3,21 +3,26 @@ package entities;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class deck{
-    public static ArrayList<card> cardList;
+public class Spreads {
+    public static ArrayList<Spread> spreadList;
 
     static {
         try {
-            cardList = cardInit.getCardList();
+            spreadList = SpreadInit.getSpreads();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static ArrayList<card> getDeck(){
-        return cardList;
+    public Spreads() throws IOException {
     }
+
     public static void main(String[] args) {
-        System.out.println(cardList.get(77));
+        System.out.println(spreadList.get(0));
     }
 }
+
+
+
+
+
