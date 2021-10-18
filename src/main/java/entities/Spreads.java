@@ -18,9 +18,6 @@ public class Spreads {
         return spreadList;
     }
 
-    public static void main(String[] args) {
-        System.out.println(spreadList);
-    }
 }
 
 
