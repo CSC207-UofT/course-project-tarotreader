@@ -14,11 +14,12 @@ public class Spreads {
         }
     }
 
-    public Spreads() throws IOException {
+    public static ArrayList<Spread> getSpreadList(){
+        return spreadList;
     }
 
     public static void main(String[] args) {
-        System.out.println(spreadList.get(0));
+        System.out.println(spreadList);
     }
 }
 

@@ -6,10 +6,10 @@ public class User {
     String birthday;
     ReadingLog readingLog;
 
-    public User(String username, int year, int month, int day, ReadingLog r) {
+    public User(String username, int year, int month, int day) {
         this.username = username;
         this.birthday = year + "/" + month + "/" + day;
-        this.readingLog = r;
+        this.readingLog = new ReadingLog(this);
     }
 
     public String getUsername() {
