@@ -4,8 +4,6 @@ import controllers.ShuffleManager;
 import controllers.SpreadManager;
 import entities.*;
 import useCases.TarotReader;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class TarotReaderRun {

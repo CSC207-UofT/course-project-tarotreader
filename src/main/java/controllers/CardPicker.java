@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class CardPicker {
-    private static ArrayList<Card> pickedCards = new ArrayList<>();
+    private static final ArrayList<Card> pickedCards = new ArrayList<>();
     private static final Random rand = new Random();
     private static final int index1 = rand.nextInt(78);
     private static final int index2 = rand.nextInt(78);

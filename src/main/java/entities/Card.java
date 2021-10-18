@@ -4,7 +4,7 @@ public class Card{
     /***
      *
      */
-    private String name;
+    private final String name;
     private int number;
     private boolean isReversed;
     private boolean isMajor;
