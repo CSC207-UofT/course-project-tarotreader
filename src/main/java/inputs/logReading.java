@@ -1,14 +1,14 @@
 package inputs;
 
 import entities.*;
-import useCases.tarotReader;
-import controllers.readingLogManager;
+import useCases.TarotReader;
+import controllers.ReadingLogManager;
 
-public class logReading {
+public class LogReading {
     private static final String LOG_COMMAND = "log";
 
-    public static void log(user user, tarotReader reading) {
-        readingLogManager.logReading(user, reading);
+    public static void log(User user, TarotReader reading) {
+        ReadingLogManager.logReading(user, reading);
     }
 
 }
