@@ -28,6 +28,6 @@ public class TarotReaderRun {
         ReadingLogManager.addLog(newUser);
         ReadingLogManager.logReading(newUser, reading);
         ReadingLog readingLog = newUser.getReadingLog();
-        System.out.println(readingLog.toString());
+        System.out.println("Here is your reading log: \n" + readingLog.toString());
     }
 }
