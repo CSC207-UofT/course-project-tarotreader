@@ -1,15 +1,15 @@
 package controllers;
 
-import entities.Card;
-import useCases.Shuffler;
+import entities.Spread;
 import java.util.ArrayList;
+import java.util.List;
 
-public class ShuffleManager extends Shuffler {
-    public static ArrayList<Card> shuffleNTimes(int n) throws Exception {
-        ArrayList<Card> result = new ArrayList<Card>();
-        if (n <= 0 || n > 10){
-            throw new Exception("Please enter a valid input between 1 and 10");
-        }
-        return Shuffler.shuffleDeck(n);
+public class SpreadManager {
+
+    private static List<Spread> spreads = new ArrayList<Spread>();
+
+    public static Spread chooseSpread(ArrayList<Spread> spreadList, int index) {
+        return spreadList.get(index);
     }
+
 }
