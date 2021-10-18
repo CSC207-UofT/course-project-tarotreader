@@ -1,6 +1,6 @@
 package entities;
 
-public class card{
+public class Card{
     /***
      *
      */
