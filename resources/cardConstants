@@ -3,7 +3,7 @@ The Magician, 1, true, Be confident in the power you hold. Take the resources yo
 The High Priestess, 2, true, Listen to your inner voice and your intuition. Reflect inwards and see what your unconscious self has to say. Trust your gut.
 The Empress, 3, true, Represents feminine power and initiative. This card urges you to make plans and take action. Moving forward in your pursuits and projects will bring happiness and success.
 The Emperor, 4, true, Represents authority and ambition ruling head over heart. This card is says that your accomplishments will gain you respect recognition and will bring fruitful rewards in wealth and stability.
-The The Heirophant, 5, true, Value tradition. Value what is tried and true now is not the time to try unfamiliar things. This card also represents a pursuit of knowledge and the presence and importance of a mentor in your life.
+The Heirophant, 5, true, Value tradition. Value what is tried and true now is not the time to try unfamiliar things. This card also represents a pursuit of knowledge and the presence and importance of a mentor in your life.
 The Lovers, 6, true, This card speaks of a union that is filled with trust confidence and strength. This can represent harmony in a physical or emotional relationship. Or it can represent harmony within yourself.
 The Chariot, 7, true, Take control of the chaos around. Take the reins and accomplish what you desire. Self control and willpower will bring victory and success.
 Justice, 8, true, This card suggests moderation reason and weighing right and wrong. This is the balance of life. Reflect on your actions and what they cause. Value truth above all else and be true to yourself.
@@ -15,12 +15,12 @@ Death, 13, true, New beginnings are coming. There is going to be sudden drastic 
 Temperance, 14, true, Focus on the journey rather than the destination. This card suggests calmness tolerance and compassion. Have patience and be sensible to come up with solutions to your problem. Practice moderation.
 The Devil, 15, true, You may feel helpless or trapped by your problems or you may be looking for something to blame them on. This card tells you to let go of that which holds you down. Examine your bad habits and vices and rid yourself of them.
 The Tower, 16, true, This card warns of dramatic and unexpected upheaval that is coming. This will be a big change that turns everything on its head. It suggests of starting anew. After a storm comes a rainbow and there may be something far better waiting for you when the chaos subsides.
-The Star 17, true, This is a sign of prosperity luck and success. Encourages you to reach for and work towards your wildest dreams. Luck is on your side and your plans are coming to fruition.
+The Star, 17, true, This is a sign of prosperity luck and success. Encourages you to reach for and work towards your wildest dreams. Luck is on your side and your plans are coming to fruition.
 The Moon, 18, true, There is a situation that has left you lost and confused. Things are not as they seem so pay attention to what your intuition tells you and look out for signs. Someone may be trying to deceive you. Face your fears and confront your demons.
 The Sun, 19, true, Opportunities for you to fulfill your goals and aspirations are coming to you. Be optimistic of the future to come. Take the initiative and be confident and you can accomplish anything.
 Judgement, 20, true, This card suggests an awakening. Live your life with greater consciousness and awareness. This is your wake up call to let go of limitations forgive past mistakes and start fresh.
 The World, 21, true, Take in the current moment. You are growing and learning. The World symbolizes a journey coming to an end but as one journey ends another will shortly begin.
-Ace of Wands, 1, false, wands, The Ace of Wands calls out to you to follow your instincts. If you think that a project you've been dreaming of is a good idea then just go ahead and do it.
+Ace of Wands, 1, false, wands, The Ace of Wands calls out to you to follow your instincts. If you think that a project youve been dreaming of is a good idea then just go ahead and do it.
 Two of Wands, 2, false, wands, The Two of Wands is a more mature version of the ace of wands. This card is all about planning and moving forward. Through your plans you will progress.
 Three of Wands, 3, false, wands, The Three of Wands hints that you are creating a stable foundation for yourself.
 Four of Wands, 4, false, wands, Reflect on a period where you are together with your loved ones. Your current situation heralds celebration.
@@ -50,16 +50,16 @@ Queen of Cups, 13, false, cups, The Queen of Cups urges you to listen to your in
 King of Cups, 14, false, cups, The King of Cups represents balance between the intellect and emotions. He indicates that there is a strong relationship between understanding and feeling. Balance you emotions and through this balance you will be able to control them. Have deeper awareness and knowledge of yourself.
 Ace of Swords, 1, false, swords, The Ace of Swords indicates that one is about to experience a moment of breakthrough.
 Two of Swords, 2, false, swords, We find ourselves in a situation where we must make a choice...Neither seems particularly appealing.
-Three of Swords, 3, false, swords, Sometimes life gives us no choice - we are knocked down. But what determines one's future is the choice of whether to remain down or rise again.
+Three of Swords, 3, false, swords, Sometimes life gives us no choice - we are knocked down. But what determines ones future is the choice of whether to remain down or rise again.
 Four of Swords, 4, false, swords, The Four of Swords is a moment of rest. Whether this is from a choice to withdraw or whether it is from pure exhaustion it is not clear.
 Five of Swords, 5, false, swords, What is more important to you? Mutual progress or winning?
 Six of Swords, 6, false, swords, Despite your sadness you need to remember that moving on is the ideal option for your future.
 Seven of Swords, 7, false, swords, There are instances when we are forced to be sneaky hoping that we will not be discovered. When we are found out we have to face the consequences.
-Eight of Swords, 8, false, swords, Surrendering one’s power to an unknown entity whether it's fate or God or the government or something else means that you are giving away your own personal responsibility to affect change.
+Eight of Swords, 8, false, swords, Surrendering one’s power to an unknown entity whether its fate or God or the government or something else means that you are giving away your own personal responsibility to affect change.
 Nine of Swords, 9, false, swords, Sharing your grief does at least provide an outlet for your pain and may release you from carrying this burden alone.
 Ten of Swords, 10, false, swords, The story as it unfolds from the ace to the ten is one where an untrained individual uses this weapon for faulty reasons - makes many mistakes and then spends an entire lifetime attempting to run away from the power that he misused.
 Page of Swords, 11, false, swords, Her aptitude for language also makes her an incredible communicator and with her love of ideas you may find her always engaged in some passionate debate.
-Knight of Swords, 12, false, swords, Once the knight sets forth towards his goals there is absolutely no stopping him. He doesn’t see - and he doesn’t care - about any upcoming challenges.
+Knight of Swords, 12, false, swords, Once the knight sets forth towards his goals there is absolutely no stopping him. He doesnt see - and he doesnt care - about any upcoming challenges.
 Queen of Swords, 13, false, swords, This card represents the importance of making judgments without relying on emotion alone. The Queen of Swords beckons you to look at all the facts before making a decision.
 King of Swords, 14, false, swords, Because he rules over the suit of swords he has a special connection to rules laws and diplomacy which are systems of logical thought applied and manifest on earth.
 Ace of Pentacles, 1, false, pentacles, Watering this seed has the potential to be very rewarding - for anything that is grown on this energy is meant to be stable secure and give a good yield.

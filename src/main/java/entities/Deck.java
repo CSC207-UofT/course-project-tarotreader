@@ -17,4 +17,17 @@ public class Deck {
     public static ArrayList<Card> getDeck(){
         return cardList;
     }
+
+//    public static void main(String[] args) {
+//        int i = 0;
+//        ArrayList<Integer> temp = new ArrayList<>();
+//        for (Card c : cardList) {
+//            if (c == null) {
+//                temp.add(i);
+//            }
+//            i++;
+//        }
+//        System.out.println(temp);
+//        System.out.println(cardList);
+//    }
 }

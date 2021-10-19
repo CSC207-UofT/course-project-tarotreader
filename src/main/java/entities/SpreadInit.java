@@ -20,6 +20,7 @@ public class SpreadInit {
 
     public SpreadInit() throws FileNotFoundException {
     }
+    /* read from csv file */
 
     public static ArrayList<Spread> getSpreads() throws IOException {
         String line;

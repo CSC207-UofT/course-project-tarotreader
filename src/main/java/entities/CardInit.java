@@ -24,12 +24,12 @@ public class CardInit {
 
     public static ArrayList<Card> getCardList() throws IOException {
         String line;
-        while ((line = TarotReader.readLine()) != null){
+        while ((line = TarotReader.readLine()) != null) {
             String[] elem = line.split(",");
             Card newCard = null;
-            if(elem.length == 4){
+            if (elem.length == 4) {
                 newCard = new Card(elem[0].strip(), elem[1].strip(), elem[2].strip(), elem[3].strip());
-            }else if(elem.length == 5){
+            } else if (elem.length == 5) {
                 newCard = new Card(elem[0].strip(), elem[1].strip(), elem[2].strip(), elem[3].strip(), elem[4].strip());
             }
             cardList.add(newCard);
