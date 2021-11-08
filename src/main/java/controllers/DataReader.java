@@ -1,4 +1,4 @@
 package controllers;
 
-public class DataReader {
+public class DataReader <Interface>{
 }

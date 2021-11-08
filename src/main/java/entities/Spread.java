@@ -34,15 +34,5 @@ public class Spread {
         return this.positionMeaning;
     }
 
-    private ArrayList<Spread> spreadList = new ArrayList<>();
-
-    public ArrayList<Spread> getSpreadList(){
-        try {
-            spreadList = SpreadInit.getSpreads();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return spreadList;
-    }
 }
 
