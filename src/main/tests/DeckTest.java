@@ -1,7 +1,8 @@
 import entities.Deck;
 import org.junit.Test;
 import entities.Card;
-import entities.CardInit;
+import useCases.CardInit;
+
 
 import static org.junit.Assert.*;
 

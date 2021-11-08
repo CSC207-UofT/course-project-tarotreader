@@ -1,4 +1,6 @@
-package entities;
+package useCases;
+
+import entities.Card;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -7,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CardInit {
-    private static ArrayList<Card> cardList = new ArrayList<>();
+    private static ArrayList<Card> cardList = new ArrayList<Card>();
     private static BufferedReader TarotReader;
 
     static {

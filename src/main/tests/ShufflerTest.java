@@ -1,7 +1,7 @@
 import entities.Card;
 import entities.Deck;
 import org.junit.Test;
-import useCases.Shuffler;
+import useCases.TarotReader;
 
 import static org.junit.Assert.*;
 
@@ -12,8 +12,8 @@ public class ShufflerTest {
     public void testShuffler() {
         try {
             ArrayList<Card> origDeck = Deck.getDeck();
-            ArrayList<Card> shuffledDeck1 = Shuffler.shuffleDeck(3);
-            ArrayList<Card> shuffledDeck2 = Shuffler.shuffleDeck(3);
+            ArrayList<Card> shuffledDeck1 = TarotReader.shuffler(3);
+            ArrayList<Card> shuffledDeck2 = TarotReader.shuffler(3);
             assertNotEquals(shuffledDeck1, shuffledDeck2);
             assertNotEquals(origDeck, shuffledDeck2);
             assertNotEquals(origDeck, shuffledDeck1);

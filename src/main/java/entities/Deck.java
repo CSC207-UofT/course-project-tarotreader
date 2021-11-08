@@ -1,5 +1,5 @@
 package entities;
-
+import useCases.CardInit;
 import java.io.IOException;
 import java.util.ArrayList;
 

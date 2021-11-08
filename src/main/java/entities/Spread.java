@@ -1,5 +1,10 @@
 package entities;
 
+import useCases.SpreadInit;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Spread {
 
     private String spreadName;
@@ -28,4 +33,16 @@ public class Spread {
     public String getPositionMeanings(){
         return this.positionMeaning;
     }
+
+    private ArrayList<Spread> spreadList = new ArrayList<>();
+
+    public ArrayList<Spread> getSpreadList(){
+        try {
+            spreadList = SpreadInit.getSpreads();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return spreadList;
+    }
 }
+

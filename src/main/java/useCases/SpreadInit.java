@@ -1,4 +1,6 @@
-package entities;
+package useCases;
+
+import entities.Spread;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
