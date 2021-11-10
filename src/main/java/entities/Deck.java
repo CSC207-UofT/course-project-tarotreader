@@ -31,3 +31,12 @@ public class Deck {
 //        System.out.println(cardList);
 //    }
 }
+
+public class Deck{
+    //building an arraylist of cards
+    ArrayList<cardList> Card = new ArrayList<cardList>();
+    for (cardList C: Card){
+        cards.add(C)
+    }
+    system.out.printIn(Card);
+}
