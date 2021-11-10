@@ -1,4 +1,5 @@
 package java;
+package useCases;
 
 
 public class CommandLineInterface{
