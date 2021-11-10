@@ -12,7 +12,7 @@ import java.util.Random;
 public class TarotReader {
     public ArrayList<String> reading;
 
-    public TarotReader(ArrayList<Card> chosenCards) {
+    public TarotReader(ArrayList<Card> chosenkCards) {
         /*this.reading = new ArrayList<>(chosenCards.size());*/
         this.reading = new ArrayList<>();
         System.out.println("You have chosen " + chosenCards.size() + " cards.");
