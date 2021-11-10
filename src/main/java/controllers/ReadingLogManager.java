@@ -33,10 +33,8 @@ public class ReadingLogManager {
     }
 
     public static void remove_log(User user) {
-        logs.remove(user):
+        logs.remove(user);
         /* As our keys are user we need to figure at a way to distinct the keys to be able to delete a specific log.*/
-        }
     }
-
 }
 
