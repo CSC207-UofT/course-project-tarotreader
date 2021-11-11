@@ -33,10 +33,12 @@ public class Deck {
 }
 
 public class Deck{
-    //building an arraylist of cards
-    ArrayList<cardList> Card = new ArrayList<cardList>();
-    for (cardList C: Card){
-        cards.add(C)
+    //this holds an arraylist of card objects
+
+    // creating an arraylist
+    ArrayList<Card> cardList = new ArrayList<Card>();
+    for (Card C: cardList){
+        cardList.add(C)
     }
     system.out.printIn(Card);
 }
