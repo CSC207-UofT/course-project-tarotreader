@@ -30,6 +30,7 @@ public class Reading implements Serializable {
     public void nameReading(String name){
         this.readingname = name;
     }
+
     @Override
     public String toString(){
         StringBuilder myString = new StringBuilder();
