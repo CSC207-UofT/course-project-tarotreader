@@ -25,13 +25,14 @@ public class SpreadInit {
         }
         return spreadList;
     }
-    public static void main(String[] args) throws IOException {
+   /* public static void main(String[] args) throws IOException {
         spreadList = getSpreads();
         int counter = 0;
         for (Spread spread : spreadList) {
             System.out.println(spread.getSpreadName());
+            System.out.println(spread.getNumCards());
             counter++;
         }
         System.out.println(counter);
-    }
+    }*/
 }
