@@ -42,6 +42,5 @@ public class ReadingGenerator {
     public void nameReading(String name, Reading reading){
         reading.readingName = name;
     }
-
 }
 
