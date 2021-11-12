@@ -1,42 +1,37 @@
 package useCases;
-
 import entities.Card;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import controllers.DataReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class CardInit {
-    private static ArrayList<Card> cardList = new ArrayList<Card>();
-    private static BufferedReader TarotReader;
-
-    static {
-        try {
-            TarotReader = new BufferedReader(new FileReader("resources/cardConstants"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public CardInit() throws FileNotFoundException {
-    }
-
+    private static ArrayList<Card> cardList = new ArrayList<>();
 
     public static ArrayList<Card> getCardList() throws IOException {
-        String line;
-        while ((line = TarotReader.readLine()) != null) {
-            String[] elem = line.split(",");
+        ArrayList<String[]> data = DataReader.readData("resources/cardConstants");
+        int length = data.size();
+        int i = 0;
+        while (i < length){
+            String[] currLine = data.get(i);
             Card newCard = null;
-            if (elem.length == 4) {
-                newCard = new Card(elem[0].strip(), elem[1].strip(), elem[2].strip(), elem[3].strip());
-            } else if (elem.length == 5) {
-                newCard = new Card(elem[0].strip(), elem[1].strip(), elem[2].strip(), elem[3].strip(), elem[4].strip());
+            if (currLine.length == 4) {
+                newCard = new Card(currLine[0].strip(), currLine[1].strip(), currLine[2].strip(), currLine[3].strip());
+            } else if (currLine.length == 5) {
+                newCard = new Card(currLine[0].strip(), currLine[1].strip(), currLine[2].strip(), currLine[3].strip(), currLine[4].strip());
             }
             cardList.add(newCard);
-
+            i ++;
         }
         return cardList;
+    }
+
+    public static void main(String[] args) throws IOException {
+        cardList = getCardList();
+        int counter = 0;
+        for (Card card : cardList) {
+            System.out.println(card.getName());
+            counter++;
+        }
+        System.out.println(counter);
     }
 }

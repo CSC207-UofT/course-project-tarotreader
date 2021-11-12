@@ -33,5 +33,9 @@ public class Card{
     public String getName(){
         return this.name;
     }
+    public boolean isReversed(){return this.isReversed;}
+    public void setReversed(boolean bool){
+        this.isReversed = bool;
+    }
 }
 
