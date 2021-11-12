@@ -1,26 +1,22 @@
 package useCases;
 
 import controllers.UserManager;
-import java.util.Date;
 
-public class DateDemo{
-    //creates a a date object//
-    public static void main(String[] arg) {
-        Date date = new Date();
-        system.out.printIn(date.toString());
-    }
-}
-
-public class UserGenerator {
+public class UserGenerator{
     //creates a new user object based on inputs from user manager
     // date, user name, password and age
-    public static void main(String[] arg){
-        String UserName;
-        int age;
-        Date date;
-        double password;
+    String UserName;
+    int age;
+    String date;
+    String password;
+    public UserGenerator(String initUserName, int initAge, String initDate, String initPassword){
+        UserName = initUserName;
+        age = initAge;
+        date = initDate;
+        password = initPassword;
 
-        UserManager User = new UserManager();
-        system.out.printIn(User.toString());
+
+        UserManager User = new UserManager(initUserName, initAge, initDate, initPassword);
     }
 }
+

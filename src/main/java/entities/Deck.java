@@ -3,20 +3,20 @@ import useCases.CardInit;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Deck {
-    public static ArrayList<Card> cardList;
+//public class Deck {
+    //public static ArrayList<Card> cardList;
 
-    static {
-        try {
-            cardList = CardInit.getCardList();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    //static {
+        //try {
+           // cardList = CardInit.getCardList();
+        //} catch (IOException e) {
+         //   e.printStackTrace();
+       // }
+   // }
 
-    public static ArrayList<Card> getDeck(){
-        return cardList;
-    }
+   // public static ArrayList<Card> getDeck(){
+    //    return cardList;
+  //  }
 
 //    public static void main(String[] args) {
 //        int i = 0;
@@ -30,15 +30,20 @@ public class Deck {
 //        System.out.println(temp);
 //        System.out.println(cardList);
 //    }
-}
 
-public class Deck{
+
+public class Deck {
     //this holds an arraylist of card objects
+    private ArrayList<Card> cardList;
 
-    // creating an arraylist
-    ArrayList<Card> cardList = new ArrayList<Card>();
-    for (Card C: cardList){
-        cardList.add(C)
+    public Deck() {
+        this.cardList = new ArrayList<Card>();
+
     }
-    system.out.printIn(Card);
+
+    public Deck(ArrayList<Card> cardList) {
+        this.cardList = new ArrayList<Card>();
+        this.cardList.addAll(cardList);
+    }
 }
+
