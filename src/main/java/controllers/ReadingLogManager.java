@@ -1,4 +1,5 @@
 package controllers;
+import entities.Reading;
 import entities.ReadingLog;
 import entities.User;
 import useCases.TarotReader;
@@ -20,7 +21,7 @@ public class    ReadingLogManager {
     }
 
     // Returns true if the reading is successfully added to the log, false otherwise.
-    public static boolean logReading(User user, TarotReader reading) {
+    public static boolean logReading(User user, Reading reading) {
         if (logs.containsKey(user)) {
             logs.get(user).addToLog(reading);
             return true;

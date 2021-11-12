@@ -22,7 +22,7 @@ public class TarotReaderRun {
         TarotReader reading = new TarotReader(chosenCards);
         System.out.println("You have chosen a " + spreads.get(0).getSpreadName() + ". \n" + reading.toString());
         ReadingLogManager.addLog(newUser);
-        ReadingLogManager.logReading(newUser, reading);
+        //ReadingLogManager.logReading(newUser, reading);
         ReadingLog readingLog = newUser.getReadingLog();
         System.out.println("Here is your reading log: \n" + readingLog.toString());
     }
