@@ -15,9 +15,13 @@ public class ReadingGenerator {
 
     public static ArrayList<Card> shuffleDeck(int n){
         ArrayList<Card> deckClone = (ArrayList<Card>) Deck.getDeck().clone();
+        Random randomBool = new Random();
         for (int i = 0; i < n; i++) {
             Collections.shuffle(deckClone);
             System.out.println("I'm shuffling the deck for you...");
+        }
+        for(Card card:deckClone){
+            card.setReversed(randomBool.nextBoolean());
         }
         return deckClone;
     }
@@ -34,12 +38,6 @@ public class ReadingGenerator {
         ArrayList<Card> pickedCards = pickCard(shuffledDeck, indexOfCards);
         return new Reading(pickedCards, user, spread);
     }
-
-
-
-
-
-
 
 }
 
