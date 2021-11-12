@@ -34,5 +34,6 @@ public class Spread {
         return this.positionMeaning;
     }
 
+    public static ArrayList<Spread> getSpreadList() throws IOException { return SpreadInit.getSpreads();}
 }
 

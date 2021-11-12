@@ -1,43 +1,38 @@
 package useCases;
 
+import controllers.DataReader;
 import entities.Spread;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class SpreadInit {
     private static ArrayList<Spread> spreadList = new ArrayList<>();
-    private static BufferedReader SpreadReader;
-
-    static {
-        try {
-            SpreadReader = new BufferedReader(new FileReader("resources/spreadConstants"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public SpreadInit() throws FileNotFoundException {
-    }
-    /* read from csv file */
 
     public static ArrayList<Spread> getSpreads() throws IOException {
-        String line;
-        while ((line = SpreadReader.readLine()) != null){
-            String[] elem = line.split(",");
+        ArrayList<String[]> data = DataReader.readData("resources/spreadConstants");
+        int length = data.size();
+        int i = 0;
+        while (i < length){
+            String[] currLine = data.get(i);
             Spread newSpread;
-            if(elem.length == 2){
-                newSpread = new Spread(elem[0], elem[1]);
+            if(currLine.length == 2){
+                newSpread = new Spread(currLine[0], currLine[1]);
             }else{
-                newSpread = new Spread(elem[0], elem[1], elem[2]);
+                newSpread = new Spread(currLine[0], currLine[1], currLine[2]);
             }
             spreadList.add(newSpread);
-
+            i ++;
         }
         return spreadList;
     }
-
+   /* public static void main(String[] args) throws IOException {
+        spreadList = getSpreads();
+        int counter = 0;
+        for (Spread spread : spreadList) {
+            System.out.println(spread.getSpreadName());
+            System.out.println(spread.getNumCards());
+            counter++;
+        }
+        System.out.println(counter);
+    }*/
 }
