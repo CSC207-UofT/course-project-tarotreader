@@ -11,7 +11,7 @@ public class TarotReaderRun {
         int numShuffle = 3;
         ArrayList<Card> newDeck = Deck.getDeck();
         ArrayList<Spread> spreads = SpreadInit.getSpreads();
-        User newUser = new User("tarotReaderUser", 1999, 1, 13);
+        User newUser = new User("tarotReaderUser", "elif1999", 1999, 12, 1);
         System.out.println("Hello new user " + newUser.getUsername() + ", you have successfully created your account!");
         //Spread spread = SpreadManager.chooseSpread(spreads, 0);
         java.util.ArrayList<Card> shuffledDeck = TarotReader.shuffler(numShuffle);
@@ -22,7 +22,7 @@ public class TarotReaderRun {
         TarotReader reading = new TarotReader(chosenCards);
         System.out.println("You have chosen a " + spreads.get(0).getSpreadName() + ". \n" + reading.toString());
         ReadingLogManager.addLog(newUser);
-        ReadingLogManager.logReading(newUser, reading);
+        //ReadingLogManager.logReading(newUser, reading);
         ReadingLog readingLog = newUser.getReadingLog();
         System.out.println("Here is your reading log: \n" + readingLog.toString());
     }

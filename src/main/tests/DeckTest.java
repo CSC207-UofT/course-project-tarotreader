@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DeckTest {
-    ArrayList<Card> thisDeck = CardInit.getCardList();
 
     public DeckTest() throws IOException {
     }
@@ -18,6 +17,7 @@ public class DeckTest {
     @Test
     public void TestInitialCardListContents(){
         try {
+            ArrayList<Card> thisDeck = Deck.getDeck();
             String output = thisDeck.get(0).getName();
             assertEquals("The Fool", output);
         } catch (Exception e){
