@@ -3,10 +3,12 @@ package entities;
 import entities.Card;
 import entities.Deck;
 import entities.User;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Reading {
+public class Reading implements Serializable {
     public ArrayList<Card> chosenCards;
     public ArrayList<String> reading;
     public String name;
