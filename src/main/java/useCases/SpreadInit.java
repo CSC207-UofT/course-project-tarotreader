@@ -15,11 +15,7 @@ public class SpreadInit {
         while (i < length){
             String[] currLine = data.get(i);
             Spread newSpread;
-            if(currLine.length == 2){
-                newSpread = new Spread(currLine[0], currLine[1]);
-            }else{
-                newSpread = new Spread(currLine[0], currLine[1], currLine[2]);
-            }
+            newSpread = new Spread(currLine[0], currLine[1]);
             spreadList.add(newSpread);
             i ++;
         }
