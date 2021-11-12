@@ -3,7 +3,6 @@ package useCases;
 import entities.Card;
 import entities.Deck;
 import entities.User;
-
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collections;
