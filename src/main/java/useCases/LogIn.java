@@ -9,7 +9,7 @@ public class LogIn {
 
      // Need access to the list of users, don't know where from
     public static User login(String username, String password, ArrayList<User> users) throws NoSuchUserException {
-        User loggedInUser = new User("",0,0,0);
+        User loggedInUser = new User("user","123",2001,1, 1);
         boolean foundUser = false;
         for (int i = 0; i < users.size(); i++) {
             String currentUsername = users.get(i).getUsername();
