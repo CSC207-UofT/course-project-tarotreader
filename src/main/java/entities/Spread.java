@@ -16,12 +16,6 @@ public class Spread {
         this.numberOfCards = Integer.parseInt(numberOfCards);
     }
 
-    public Spread(String spreadName, String numberOfCards, String positionMeaning){
-        this.spreadName = spreadName;
-        this.numberOfCards = Integer.parseInt(numberOfCards);
-        this.positionMeaning = positionMeaning;
-    }
-
     public String getSpreadName(){
         return this.spreadName;
     }
