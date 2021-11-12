@@ -39,5 +39,9 @@ public class ReadingGenerator {
         return new Reading(pickedCards, user, spread);
     }
 
+    public void nameReading(String name, Reading reading){
+        reading.readingName = name;
+    }
+
 }
 
