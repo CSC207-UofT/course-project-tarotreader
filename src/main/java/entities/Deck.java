@@ -14,6 +14,7 @@ public class Deck {
         }
     }
 
+
     public static ArrayList<Card> getDeck(){
         return cardList;
     }

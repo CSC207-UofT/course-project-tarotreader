@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class    ReadingLogManager {
+public class ReadingLogManager {
     private static final Map<User, ReadingLog> logs = new HashMap<>();
 
     // If the user does not have a reading log, returns null.

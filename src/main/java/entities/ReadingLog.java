@@ -1,30 +1,29 @@
 package entities;
-import useCases.TarotReader;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import entities.Reading;
 
 public class ReadingLog {
-    private List<Reading> readings;
+    private Map<String, Reading> readings;
     private User belongingUser;
 
     public ReadingLog(User user) {
         this.belongingUser = user;
-        this.readings = new ArrayList<Reading>();
+        this.readings = new HashMap<String, Reading>();
     }
 
-    public List<Reading> getReadings() {
+    public Map<String, Reading> getReadings() {
         return this.readings;
     }
 
     public void addToLog(Reading reading) {
-        readings.add(reading);
+        readings.put(reading.readingName, reading);
     }
 
     @Override
     public String toString() {
         StringBuilder logs = new StringBuilder();
-        for (Reading reading: readings) {
+        for (Reading reading: readings.values()) {
             logs.append(reading.toString());
             logs.append("\n");
         }
