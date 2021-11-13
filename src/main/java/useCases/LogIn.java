@@ -1,5 +1,9 @@
 package useCases;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -7,29 +11,32 @@ import entities.User;
 
 public class LogIn {
 
-     // Need access to the list of users, don't know where from
-    public static User login(String username, String password, ArrayList<User> users) throws NoSuchUserException {
-        User loggedInUser = new User("user","123",2001,1, 1);
-        boolean foundUser = false;
-        for (int i = 0; i < users.size(); i++) {
-            String currentUsername = users.get(i).getUsername();
-            //String currentPassword = users.get(i).getPassword();
-            if (Objects.equals(users.get(i).getUsername(), username)) {
-                //TODO: Add password check here
-                loggedInUser = users.get(i); //This will be in the password check if
-                foundUser = true;
+    public static User loginBetter(String username, String password) throws WrongPasswordException {
+        User loggedInUser = null;
+        try {
+            FileInputStream inputStream = new FileInputStream("/users/" + username + ".ser");
+            ObjectInputStream in = new ObjectInputStream(inputStream);
+            loggedInUser = (User) in.readObject();
+            in.close();
+            inputStream.close();
+            if (Objects.equals(loggedInUser.getPassword(), password)) {
+                return loggedInUser;
+            }
+            else {
+                throw new WrongPasswordException("Wrong password");
             }
         }
-        if (foundUser) {
-            return loggedInUser;
+        catch(IOException ioException) {
+            ioException.printStackTrace();
         }
-        else {
-            throw new NoSuchUserException("No user found with username " + username);
+        catch(ClassNotFoundException fileException) {
+            System.out.println("There isn't a user registered with this username");
         }
+        return loggedInUser;
     }
 
-    private static class NoSuchUserException extends Exception {
-        public NoSuchUserException(String errorMessage) {
+    private static class WrongPasswordException extends Exception {
+        public WrongPasswordException(String errorMessage) {
             super(errorMessage);
         }
     }
