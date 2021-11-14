@@ -1,4 +1,5 @@
 package controllers;
+package useCases;
 
 import useCases.UserGenerator;
 
@@ -14,5 +15,9 @@ public class UserManager {
         UserName = initUserName;
         password = initPassword;
         date = initDate;
+    }
+
+    public static void login_user() {
+        //logs.put(user, user.getReadingLog());
     }
 }
