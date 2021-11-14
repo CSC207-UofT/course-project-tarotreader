@@ -4,7 +4,7 @@ import java.util.Map;
 import entities.Reading;
 
 public class ReadingLog {
-    private Map<String, Reading> readings;
+    private HashMap<String, Reading> readings;
     private User belongingUser;
 
     public ReadingLog(User user) {

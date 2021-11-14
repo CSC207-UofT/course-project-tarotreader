@@ -10,12 +10,17 @@ import java.util.Map;
 
 public class ReadingLogManager {
     private static final Map<User, ReadingLog> logs = new HashMap<>();
+    private static Reading reading;
 
     // If the user does not have a reading log, returns null.
-    public static ReadingLog viewLog(User user) {
+    public static ReadingLog viewLog(User user, String readingName) {
         ReadingLog log = null;
         if (logs.containsKey(user)) {
             log = logs.get(user);
+        }
+        assert log != null;
+        if (log.readings.containsKey(readingName)) {
+            reading = log.readings.get(readingName);
         }
         return log;
     }
@@ -34,8 +39,12 @@ public class ReadingLogManager {
     }
 
     public static void remove_log(User user) {
-        logs.remove(user);
-        /* As our keys are user we need to figure at a way to distinct the keys to be able to delete a specific log.*/
+        if (logs.containsKey(user)) {
+            logs.get(user).addToLog(reading);
+            return true;
+        }
+        return false;
+    }
     }
 }
 
