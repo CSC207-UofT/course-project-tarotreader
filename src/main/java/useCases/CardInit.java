@@ -8,12 +8,13 @@ public class CardInit {
     /***
      * A method for initializing card objects from a constants file using the DataReader controller
      */
-    private static ArrayList<Card> cardList = new ArrayList<>();
+    //private static ArrayList<Card> cardList = new ArrayList<>();
 
     public static ArrayList<Card> getCardList() throws IOException {
         ArrayList<String[]> data = DataReader.readData("resources/cardConstants"); // Reads data from constants
                                                                                            // file using DataReader
                                                                                            // readData() method
+        ArrayList<Card> cardList = new ArrayList<>();
         int length = data.size();
         int i = 0;
         while (i < length){     // iterates through data to initialize each card object

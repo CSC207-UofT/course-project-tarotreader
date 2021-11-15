@@ -1,9 +1,10 @@
 package entities;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import entities.Reading;
 
-public class ReadingLog {
+public class ReadingLog implements Serializable {
     //Holds all users and their related HashMap of String names and Readings for each user.
     private HashMap<String, Reading> readings;
     private User belongingUser;

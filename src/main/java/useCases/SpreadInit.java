@@ -9,12 +9,13 @@ public class SpreadInit {
     /***
      * A method for initializing spread objects from a constants file using the DataReader controller
      */
-    private static ArrayList<Spread> spreadList = new ArrayList<>();
+    // private static ArrayList<Spread> spreadList = new ArrayList<>();
 
     public static ArrayList<Spread> getSpreads() throws IOException {
         ArrayList<String[]> data = DataReader.readData("resources/spreadConstants");// Reads data from constants
                                                                                             // file using DataReader
                                                                                             // readData() method
+        ArrayList<Spread> spreadList = new ArrayList<>();
         int length = data.size();
         int i = 0;
         while (i < length){     // iterates through data to initialize each card object
