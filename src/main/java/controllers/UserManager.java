@@ -1,5 +1,5 @@
 package controllers;
-package useCases;
+//package useCases;
 
 import useCases.UserGenerator;
 
