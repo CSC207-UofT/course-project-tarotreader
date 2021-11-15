@@ -12,7 +12,7 @@ public class ReadingLogManager {
     private static Reading reading;
 
     // If the user does not have a reading log, returns null.
-    public static ReadingLog viewLog(User user, String readingName) {
+    public static ReadingLog viewLog(User user) {
         ReadingLog log = null;
         if (logs.containsKey(user)) {
             log = logs.get(user);

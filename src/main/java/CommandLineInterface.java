@@ -1,7 +1,5 @@
-import entities.Card;
-import entities.Reading;
-import entities.Spread;
-import entities.User;
+import controllers.ReadingLogManager;
+import entities.*;
 import useCases.*;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -86,15 +84,22 @@ public class CommandLineInterface{
                     Spread spread = spreads.get(spreadNumChosen);
                     // Generate Reading
                     Reading theReading = ReadingGenerator.generateReading(userLoggedIn, spread, shuffledDeck, indicesChosen);
-                    // Instantiate a ReadingLogger
-                    ReadingLogger readingLogger = new ReadingLogger(userLoggedIn);
-                    // Add reading to the ReadingLogger
-                    readingLogger.logReading(theReading);
                     // Present the Reading to the User
                     System.out.println(theReading.toString());
+                    System.out.println("Would you like to log this reading? Type Y for yes and N for no:");
+                    String log = account.nextLine();
+                    if(Objects.equals(log, "Y")){
+                        ReadingLogger thisLogger = new ReadingLogger(userLoggedIn);
+                        thisLogger.logReading(theReading);
+                    }
+                    System.out.println("Would you like to view your reading log? Type Y for yes and N for no:");
+                    String viewLog = account.nextLine();
+                    if(Objects.equals(viewLog, "Y")){
+                        System.out.println(ReadingLogManager.viewLog(userLoggedIn));
+                    }
 
                 } catch(Exception e) {
-                    System.out.println(e);
+                    System.out.println("Wrong entry. Please try again...");
                 }
             }
         }
