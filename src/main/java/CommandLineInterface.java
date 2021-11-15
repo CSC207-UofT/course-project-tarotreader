@@ -53,7 +53,7 @@ public class CommandLineInterface{
                 // Ask for Password
                 System.out.println("Enter password:");
                 String password = account.nextLine();
-                // Do Login
+                // Login
                 try {
                     // Try login
                     User userLoggedIn = LogIn.login(username, password);
@@ -80,9 +80,9 @@ public class CommandLineInterface{
                     }
                     int spreadNumChosen = Integer.parseInt(account.nextLine());
                     String spreadName = spreads.get(spreadNumChosen).getSpreadName();
-                    //System.out.println("Enter Number of Cards: ");
-                    //String numOfCards = account.nextLine();
-                    //Spread spread = new Spread(spreadName, numOfCards);
+                    //*System.out.println("Enter Number of Cards: ");
+                    //*String numOfCards = account.nextLine();
+                    //*Spread spread = new Spread(spreadName, numOfCards);
                     Spread spread = spreads.get(spreadNumChosen);
                     // Generate Reading
                     Reading theReading = ReadingGenerator.generateReading(userLoggedIn, spread, shuffleCount, indicesChosen);
