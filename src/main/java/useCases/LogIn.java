@@ -13,13 +13,14 @@ import entities.User;
 public class LogIn {
 
 
-    public static User loginBetter(String username, String password) throws WrongPasswordException {
-        /*
-         * @param username: username of the User object to deserialize
-         * @param password: password of the User object to deserialize
-         * @return Returns the logged in User if such user exists.
-         * @throws WrongPasswordException Throws exception to tell the command line interface to prompt the user for username and password again
-         */
+    /**
+     * @param username: username of the User object to deserialize
+     * @param password: password of the User object to deserialize
+     * @return Returns the logged in User if such user exists.
+     * @throws WrongPasswordException Throws exception to tell the command line interface to prompt the user for username and password again
+     */
+    public static User login(String username, String password) throws WrongPasswordException {
+
         User loggedInUser = null; //initialize the User object as null
         //This try block tries to deserialize the user based on filename (the name of the user)
         try {
@@ -37,6 +38,7 @@ public class LogIn {
                 throw new WrongPasswordException("Wrong password");
             }
         }
+        //Exception handling blocks
         catch(IOException ioException) {
             ioException.printStackTrace();
         }
