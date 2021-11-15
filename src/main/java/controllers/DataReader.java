@@ -21,7 +21,9 @@ public class DataReader {
             e.printStackTrace();
         }
         String line ;
-        while ((line = dataReader.readLine()) != null) {    // Reads until end of file
+        while (true) {
+            assert dataReader != null;
+            if ((line = dataReader.readLine()) == null) break;    // Reads until end of file
             String[] elem = line.split(",");          // Uses comma as delimiter
             data.add(elem);
         }
