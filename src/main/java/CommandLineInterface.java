@@ -53,26 +53,15 @@ public class CommandLineInterface{
                 // Ask for Password
                 System.out.println("Enter password:");
                 String password = account.nextLine();
-                // Login
+                // Do Login
                 try {
                     // Try login
                     User userLoggedIn = LogIn.login(username, password);
                     // Call getCardList() to get the card list
                     ArrayList<Card> cardList = CardInit.getCardList();
-                    // Ask for number of times to shuffle
-                    System.out.println("How many times do you want to shuffle?");
-                    int shuffleCount = Integer.parseInt(account.nextLine());
-                    // Allow user to select 3 cards
-                    ArrayList<Integer> indicesChosen = new ArrayList<>();
-                    System.out.println("There are " + cardList.size() + " cards");
-                    for(int i = 0;i<3;i++) {
-                        System.out.println("Please select card #" + (i + 1) + ": ");
-                        indicesChosen.add(Integer.parseInt(account.nextLine()));
-                    }
                     // Ask for Spread
                     ArrayList<Spread> spreads = SpreadInit.getSpreads();
                     System.out.println("Size of spreads is " + spreads.size());
-
                     System.out.println("What spread do you want?");
                     for(int i = 0;i<spreads.size();i++)
                     {
@@ -80,12 +69,23 @@ public class CommandLineInterface{
                     }
                     int spreadNumChosen = Integer.parseInt(account.nextLine());
                     String spreadName = spreads.get(spreadNumChosen).getSpreadName();
-                    //*System.out.println("Enter Number of Cards: ");
-                    //*String numOfCards = account.nextLine();
-                    //*Spread spread = new Spread(spreadName, numOfCards);
+                    // Ask for number of times to shuffle
+                    System.out.println("How many times do you want to shuffle?");
+                    int shuffleCount = Integer.parseInt(account.nextLine());
+                    ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(shuffleCount);
+                    // Allow user to select 3 cards
+                    ArrayList<Integer> indicesChosen = new ArrayList<>();
+                    System.out.println("There are " + cardList.size() + " cards");
+                    for(int i = 0;i<3;i++) {
+                        System.out.println("Please select card #" + (i + 1) + ": ");
+                        indicesChosen.add(Integer.parseInt(account.nextLine()));
+                    }
+                    //System.out.println("Enter Number of Cards: ");
+                    //String numOfCards = account.nextLine();
+                    //Spread spread = new Spread(spreadName, numOfCards);
                     Spread spread = spreads.get(spreadNumChosen);
                     // Generate Reading
-                    Reading theReading = ReadingGenerator.generateReading(userLoggedIn, spread, shuffleCount, indicesChosen);
+                    Reading theReading = ReadingGenerator.generateReading(userLoggedIn, spread, shuffledDeck, indicesChosen);
                     // Instantiate a ReadingLogger
                     ReadingLogger readingLogger = new ReadingLogger(userLoggedIn);
                     // Add reading to the ReadingLogger

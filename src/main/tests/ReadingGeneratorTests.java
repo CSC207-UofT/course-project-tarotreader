@@ -23,11 +23,12 @@ public class ReadingGeneratorTests {
         User thisUser = LogIn.login("test", "test123");
         ArrayList<Integer> pickedIndex = new ArrayList<>();
         ArrayList<Spread> spreadList = SpreadInit.getSpreads();
+        ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(3);
         assertEquals(4, spreadList.size());
         pickedIndex.add(1);
         pickedIndex.add(3);
         pickedIndex.add(5);
-        Reading thisReading = ReadingGenerator.generateReading(thisUser, spreadList.get(0), 3, pickedIndex);
+        Reading thisReading = ReadingGenerator.generateReading(thisUser, spreadList.get(0), shuffledDeck, pickedIndex);
         assertNotEquals(null, thisReading);
         assert(thisReading.toString().contains("General Reading"));
     }

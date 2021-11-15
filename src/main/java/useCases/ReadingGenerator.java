@@ -41,8 +41,8 @@ public class ReadingGenerator {
     the user.
      */
 
-    public static Reading generateReading(User user, Spread spread, int shuffle, ArrayList<Integer> indexOfCards){
-        ArrayList<Card> shuffledDeck = shuffleDeck(shuffle);
+    public static Reading generateReading(User user, Spread spread, ArrayList<Card> shuffledDeck, ArrayList<Integer> indexOfCards){
+        //ArrayList<Card> shuffledDeck = shuffleDeck(shuffle);
         ArrayList<Card> pickedCards = pickCard(shuffledDeck, indexOfCards);
         return new Reading(pickedCards, user, spread);
     }
