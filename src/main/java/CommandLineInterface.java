@@ -6,32 +6,22 @@ import useCases.*;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
-
+//This class is to run the program on the command line
 public class CommandLineInterface{
     public static void main(String[] args) {
-        ArrayList<User> users = new ArrayList();
-        users.add(new User("bahati", "password", 1999, 7, 9));
-        /*
-        boolean quit = false;
-        while (!quit) {
-            Scanner trial = new Scanner(System.in);
-            System.out.println("Press q to exit");
-            String input = trial.nextLine();
-            if (Objects.equals(input, "q")) {
-                return;
-            }
-        }
-        */
+        //Will continue to loop until user presses "q"
         while (true) {
             System.out.println("Welcome to Tarot Reader 3000");
             Scanner account = new Scanner(System.in);
             System.out.println("Please enter 1 for logging in or 2 for creating a new account");
             System.out.println("Or press q to exit");
             String input = account.nextLine();
+            //Exit condition
             if (Objects.equals(input, "q")) {
                 return;
             }
             int entry = Integer.parseInt(input);
+            //Creates new user
             if (entry == 2)
             {
                 // Ask for Username
