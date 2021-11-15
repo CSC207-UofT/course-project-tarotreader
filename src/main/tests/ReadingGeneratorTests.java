@@ -28,7 +28,7 @@ public class ReadingGeneratorTests {
         pickedIndex.add(3);
         pickedIndex.add(5);
         Reading thisReading = ReadingGenerator.generateReading(thisUser, spreadList.get(0), 3, pickedIndex);
-        //assertNotEquals(null, thisReading);
-        //assert(thisReading.toString().contains("General Reading"));
+        assertNotEquals(null, thisReading);
+        assert(thisReading.toString().contains("General Reading"));
     }
 }

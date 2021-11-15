@@ -22,14 +22,12 @@ public class Reading implements Serializable {
 
     public Reading (ArrayList<Card> pickedCards, User user, Spread spread){
         this.chosenCards = pickedCards;
-        this.reading = new ArrayList<>(chosenCards.size());
+        this.reading = new ArrayList<>();
         this.name = user.username;
         this.spread = spread;
         this.readingName = "";
-        int i = 0;
         for (Card c: chosenCards){
-            this.reading.add(i, c.getMeaning());
-            i ++;
+            this.reading.add(c.getMeaning());
         }
     }
     /*toString method that prints out the reading according to the spread chosen by the user and in a way that user can

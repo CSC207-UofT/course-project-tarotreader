@@ -5,6 +5,8 @@ import entities.Deck;
 import entities.User;
 import entities.Spread;
 import entities.Reading;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
