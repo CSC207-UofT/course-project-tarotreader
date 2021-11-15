@@ -1,7 +1,6 @@
 package inputs;
 
 import entities.*;
-import useCases.TarotReader;
 import controllers.ReadingLogManager;
 
 public class LogReading {
