@@ -2,7 +2,6 @@ package controllers;
 import entities.Reading;
 import entities.ReadingLog;
 import entities.User;
-import useCases.TarotReader;
 
 import java.util.HashMap;
 import java.util.Map;
