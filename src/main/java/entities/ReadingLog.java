@@ -4,6 +4,7 @@ import java.util.Map;
 import entities.Reading;
 
 public class ReadingLog {
+    //Holds all users and their related HashMap of String names and Readings for each user.
     private HashMap<String, Reading> readings;
     private User belongingUser;
 
