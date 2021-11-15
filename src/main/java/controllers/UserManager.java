@@ -1,5 +1,5 @@
 package controllers;
-package useCases;
+//package useCases;
 
 public class UserManager {
 

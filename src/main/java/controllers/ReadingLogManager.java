@@ -18,10 +18,10 @@ public class ReadingLogManager {
         if (logs.containsKey(user)) {
             log = logs.get(user);
         }
-        assert log != null;
-        if (log.readings.containsKey(readingName)) {
-            reading = log.readings.get(readingName);
-        }
+        //*assert log != null;
+        //*if (log.readings.containsKey(readingName)) {
+        //    reading = log.readings.get(readingName);
+        //}
         return log;
     }
 
@@ -38,7 +38,7 @@ public class ReadingLogManager {
         logs.put(user, user.getReadingLog());
     }
 
-    public static void remove_log(User user) {
+    public static boolean remove_log(User user) {
         if (logs.containsKey(user)) {
             logs.get(user).addToLog(reading);
             return true;
@@ -46,5 +46,5 @@ public class ReadingLogManager {
         return false;
     }
     }
-}
+
 
