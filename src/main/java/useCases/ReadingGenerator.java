@@ -14,14 +14,15 @@ line interface mainly interacts with the methods here to generate the reading.
 public class ReadingGenerator {
     //Shuffling method that shuffles the cards in the deck 'n' times according to the number given by the user.
     public static ArrayList<Card> shuffleDeck(int n){
-        ArrayList<Card> deckClone = (ArrayList<Card>) Deck.getDeck().clone();
-        Random randomBool = new Random();
-        for (int i = 0; i < n; i++) {
+        ArrayList<Card> deckClone = (ArrayList<Card>) Deck.getDeck().clone();       // Create clone of deck so original
+                                                                                    // deck does not get mutated
+        Random randomBool = new Random();       // Create random object
+        for (int i = 0; i < n; i++) {           // Shuffle the deck user input amount of times
             Collections.shuffle(deckClone);
             System.out.println("I'm shuffling the deck for you...");
         }
-        for(Card card:deckClone){
-            card.setReversed(randomBool.nextBoolean());
+        for(Card card:deckClone){               // Iterate through deckClone
+            card.setReversed(randomBool.nextBoolean());     // Call setReversed on card object and use random bool
         }
         return deckClone;
     }

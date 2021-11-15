@@ -6,18 +6,23 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DataReader {
-
+    /***
+     * A class that holds a method for reading a file. Returns data in string format.
+     * @param fileName name of file to read from
+     * @return ArrayList<String[]>
+     * @throws IOException if file not found
+     */
     public static ArrayList<String[]> readData(String fileName) throws IOException {
         ArrayList<String[]> data = new ArrayList<>();
-        BufferedReader dataReader = null;
+        BufferedReader dataReader = null;                   // Uses BufferedReader to do file reading
         try {
             dataReader = new BufferedReader(new FileReader(fileName));
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {                  // Throws exception if file does not exist
             e.printStackTrace();
         }
         String line ;
-        while ((line = dataReader.readLine()) != null) {
-            String[] elem = line.split(",");
+        while ((line = dataReader.readLine()) != null) {    // Reads until end of file
+            String[] elem = line.split(",");          // Uses comma as delimiter
             data.add(elem);
         }
         return data;

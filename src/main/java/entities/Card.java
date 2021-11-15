@@ -2,7 +2,7 @@ package entities;
 
 public class Card{
     /***
-     *
+     * Holds constructors and methods for Major and Minor Card objects
      */
     private final String name;
     private int number;
@@ -11,6 +11,7 @@ public class Card{
     private String suit;
     private String meaning;
     public Card(String name, String number,  String isMajor, String meaning){
+        /* Constructor for Major Arcana Card objects*/
         this.name = name;
         this.number = Integer.parseInt(number);
         this.isMajor = Boolean.parseBoolean(isMajor);
@@ -18,6 +19,7 @@ public class Card{
         this.isReversed = false;
     }
     public Card(String name, String number, String isMajor, String suit, String meaning){
+        /* Constructor for Minor Arcana Card objects*/
         this.name = name;
         this.number = Integer.parseInt(number);
         this.isMajor = Boolean.parseBoolean(isMajor);
@@ -28,13 +30,20 @@ public class Card{
 
 
     public String getMeaning(){
+        /* Returns the meaning for this card */
         return this.meaning;
     }
     public String getName(){
+        /* Returns the name for this card */
         return this.name;
     }
-    public boolean isReversed(){return this.isReversed;}
+    public boolean isReversed(){
+        /* Returns True iff this card position is reversed */
+        return this.isReversed;
+    }
+
     public void setReversed(boolean bool){
+        /* Sets the isReversed value for this card */
         this.isReversed = bool;
     }
 }

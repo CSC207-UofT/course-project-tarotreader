@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Deck {
+    /***
+     * Deck object, holds array list of Card objects
+     */
     public static ArrayList<Card> cardList;
 
     static {
@@ -14,21 +17,9 @@ public class Deck {
         }
     }
 
-
     public static ArrayList<Card> getDeck(){
+        /* Returns a full deck of cards, sorted */
         return cardList;
     }
 
-//    public static void main(String[] args) {
-//        int i = 0;
-//        ArrayList<Integer> temp = new ArrayList<>();
-//        for (Card c : cardList) {
-//            if (c == null) {
-//                temp.add(i);
-//            }
-//            i++;
-//        }
-//        System.out.println(temp);
-//        System.out.println(cardList);
-//    }
 }

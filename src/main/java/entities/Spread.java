@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Spread {
+    /***
+     * Holds constructor and methods for Spread objects
+     */
 
     private String spreadName;
     private int numberOfCards;
@@ -16,13 +19,18 @@ public class Spread {
     }
 
     public String getSpreadName(){
+        /* Returns the name of this spread */
         return this.spreadName;
     }
 
     public int getNumCards(){
+        /* Returns the number of cards in this spread */
         return this.numberOfCards;
     }
 
-    public static ArrayList<Spread> getSpreadList() throws IOException { return SpreadInit.getSpreads();}
+    public static ArrayList<Spread> getSpreadList() throws IOException {
+        /* Returns an array list of all available Spread objects */
+        return SpreadInit.getSpreads();
+    }
 }
 
