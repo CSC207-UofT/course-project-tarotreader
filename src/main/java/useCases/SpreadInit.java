@@ -15,20 +15,17 @@ public class SpreadInit {
         while (i < length){
             String[] currLine = data.get(i);
             Spread newSpread;
-            newSpread = new Spread(currLine[0], currLine[1]);
+            newSpread = new Spread(currLine[0].strip(), currLine[1].strip());
             spreadList.add(newSpread);
             i ++;
         }
         return spreadList;
     }
-   /* public static void main(String[] args) throws IOException {
-        spreadList = getSpreads();
-        int counter = 0;
-        for (Spread spread : spreadList) {
-            System.out.println(spread.getSpreadName());
-            System.out.println(spread.getNumCards());
-            counter++;
+
+    public static void main(String[] args) throws IOException {
+        ArrayList<Spread> lst = SpreadInit.getSpreads();
+        for(int i = 0; i<lst.size(); i++){
+            System.out.println(lst.get(i));
         }
-        System.out.println(counter);
-    }*/
+    }
 }

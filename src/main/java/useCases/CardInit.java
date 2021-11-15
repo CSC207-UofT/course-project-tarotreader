@@ -24,14 +24,4 @@ public class CardInit {
         }
         return cardList;
     }
-
-    public static void main(String[] args) throws IOException {
-        cardList = getCardList();
-        int counter = 0;
-        for (Card card : cardList) {
-            System.out.println(card.getName());
-            counter++;
-        }
-        System.out.println(counter);
-    }
 }
