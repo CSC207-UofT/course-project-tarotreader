@@ -6,6 +6,9 @@ import entities.Card;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//CardInit implementation focusing on pulling data from the csv file using the data reader implementing the
+// scanner.
+
 public class CardInit {
     private static ArrayList<Card> cardList = new ArrayList<Card>();
 

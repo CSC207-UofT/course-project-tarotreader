@@ -3,6 +3,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// different implementation of the data reader using a scanner instead of the BufferedReader.
+// this implementation uses methods of the scanner to run through a stored csv file.
+
 public class DataReader {
 
     public static ArrayList<String[]> readData(String fileName) throws IOException{
