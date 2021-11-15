@@ -28,7 +28,7 @@ public class Reading implements Serializable {
         this.readingName = "";
         int i = 0;
         for (Card c: chosenCards){
-            this.reading.set(i, c.getMeaning());
+            this.reading.add(i, c.getMeaning());
             i ++;
         }
     }
