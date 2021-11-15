@@ -20,7 +20,7 @@ public class ReadingGeneratorTests {
     @Test
     public void GenerateReadingTest() throws Exception {
         UserGenerator.generateUser("test", "test123", 1999, 1, 1);
-        User thisUser = LogIn.loginBetter("test", "test123");
+        User thisUser = LogIn.login("test", "test123");
         ArrayList<Integer> pickedIndex = new ArrayList<>();
         ArrayList<Spread> spreadList = SpreadInit.getSpreads();
         assertEquals(4, spreadList.size());
