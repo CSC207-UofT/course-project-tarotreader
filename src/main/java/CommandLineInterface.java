@@ -78,9 +78,6 @@ public class CommandLineInterface{
                         System.out.println("Please select card #" + (i + 1) + ": ");
                         indicesChosen.add(Integer.parseInt(account.nextLine()));
                     }
-                    //System.out.println("Enter Number of Cards: ");
-                    //String numOfCards = account.nextLine();
-                    //Spread spread = new Spread(spreadName, numOfCards);
                     Spread spread = spreads.get(spreadNumChosen);
                     // Generate Reading
                     Reading theReading = ReadingGenerator.generateReading(userLoggedIn, spread, shuffledDeck, indicesChosen);
