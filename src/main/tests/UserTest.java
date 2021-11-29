@@ -14,7 +14,7 @@ public class UserTest {
     }
 
     @Test
-    public void TestSerializable(){
+    public void TestSerializableUser(){
 
         try {
             FileOutputStream fileOut =
@@ -30,7 +30,7 @@ public class UserTest {
     }
 
     @Test
-    public void TestDeserializable(){
+    public void TestDeserializableUser(){
         try {
             FileInputStream fileIn = new FileInputStream("/tmp/user.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
