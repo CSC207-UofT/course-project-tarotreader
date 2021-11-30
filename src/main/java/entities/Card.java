@@ -28,7 +28,6 @@ public class Card{
         this.isReversed = false;
     }
 
-
     public String getMeaning(){
         /* Returns the meaning for this card */
         return this.meaning;
@@ -45,6 +44,21 @@ public class Card{
     public void setReversed(boolean bool){
         /* Sets the isReversed value for this card */
         this.isReversed = bool;
+    }
+
+    public int getNumber() {
+        return this.number;
+    }
+
+    /**
+     *
+     * @return return a string representation of this card object
+     */
+    @Override
+    public String toString() {
+        //Ternary operator to determine whether the header should write Major or Minor based on the value of isMajor
+        String majorOrMinor = isMajor ? "(Major)" : "(Minor)";
+        return getName() + " " + majorOrMinor + "\n" + suit + "\n" + getMeaning();
     }
 }
 
