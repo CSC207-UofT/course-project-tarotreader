@@ -5,33 +5,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CardInit {
-    private static ArrayList<Card> cardList = new ArrayList<>();
+    /***
+     * A method for initializing card objects from a constants file using the DataReader controller
+     */
+    //private static ArrayList<Card> cardList = new ArrayList<>();
 
     public static ArrayList<Card> getCardList() throws IOException {
-        ArrayList<String[]> data = DataReader.readData("resources/cardConstants");
+        ArrayList<String[]> data = DataReader.readData("resources/cardConstants"); // Reads data from constants
+                                                                                           // file using DataReader
+                                                                                           // readData() method
+        ArrayList<Card> cardList = new ArrayList<>();
         int length = data.size();
         int i = 0;
-        while (i < length){
+        while (i < length){     // iterates through data to initialize each card object
             String[] currLine = data.get(i);
             Card newCard = null;
-            if (currLine.length == 4) {
+            if (currLine.length == 4) {     // If currLine has 4 elements, use Major card constructor
                 newCard = new Card(currLine[0].strip(), currLine[1].strip(), currLine[2].strip(), currLine[3].strip());
-            } else if (currLine.length == 5) {
-                newCard = new Card(currLine[0].strip(), currLine[1].strip(), currLine[2].strip(), currLine[3].strip(), currLine[4].strip());
+            } else if (currLine.length == 5) {      // Else currLine will have 5 elements, use Minor card constructor
+                newCard = new Card(currLine[0].strip(), currLine[1].strip(), currLine[2].strip(), currLine[3].strip(),
+                        currLine[4].strip());
             }
-            cardList.add(newCard);
+            cardList.add(newCard);      // Add each newly constructed card to cardList
             i ++;
         }
         return cardList;
-    }
-
-    public static void main(String[] args) throws IOException {
-        cardList = getCardList();
-        int counter = 0;
-        for (Card card : cardList) {
-            System.out.println(card.getName());
-            counter++;
-        }
-        System.out.println(counter);
     }
 }

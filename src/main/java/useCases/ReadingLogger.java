@@ -8,18 +8,18 @@ public class ReadingLogger {
 
     private User loggedInUser;
 
+    //Creates a ReadingLogger object with the logged in User.
     public ReadingLogger(User loggedInUser) {
         this.loggedInUser = loggedInUser;
     }
 
+    //Adds the reading generated to the user's reading log.
     public void logReading(Reading reading) {
-       ReadingLog readingLog = loggedInUser.getReadingLog();
-       readingLog.addToLog(reading);
-    }
-
-    public void deleteReading(Reading reading) {
-        //loggedInUser.getReadingLog().deleteReading(reading);
-        //TODO: Implement delete reading in ReadingLog
+        //*
+         // @param reading: The Reading object generated and to be added to the user's reading log.
+         //
+        ReadingLog readingLog = loggedInUser.getReadingLog();
+        readingLog.addToLog(reading);
     }
 }
 

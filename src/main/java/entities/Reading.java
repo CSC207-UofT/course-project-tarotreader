@@ -1,14 +1,18 @@
 package entities;
 
-import entities.Card;
-import entities.Deck;
-import entities.User;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
 
 public class Reading implements Serializable {
+    /* Reading is an entity object that holds the information about the reading itself.
+     *readingName: Name of the reading generated. Will be used in phase2.
+     *chosenCards: Keeps the list of Cards that was picked by the user.
+     *reading: Keeps the meaning of the cards as a list of strings. When toString method is called upon the object, it
+     * prints the reading in a way that user can understand.
+     * name: Name of the user.
+     * spread: holds the Spread object chosen by the user. Spread affects the way that reading is printed for the user.
+     */
     public String readingName;
     public ArrayList<Card> chosenCards;
     public ArrayList<String> reading;
@@ -18,16 +22,17 @@ public class Reading implements Serializable {
 
     public Reading (ArrayList<Card> pickedCards, User user, Spread spread){
         this.chosenCards = pickedCards;
-        this.reading = new ArrayList<>(chosenCards.size());
+        this.reading = new ArrayList<>();
         this.name = user.username;
         this.spread = spread;
         this.readingName = "";
-        int i = 0;
         for (Card c: chosenCards){
-            this.reading.set(i, c.getMeaning());
-            i ++;
+            this.reading.add(c.getMeaning());
         }
     }
+    /*toString method that prints out the reading according to the spread chosen by the user and in a way that user can
+    understand easily.
+     */
 
     @Override
     public String toString(){

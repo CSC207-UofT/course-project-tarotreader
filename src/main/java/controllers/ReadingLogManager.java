@@ -2,7 +2,6 @@ package controllers;
 import entities.Reading;
 import entities.ReadingLog;
 import entities.User;
-import useCases.TarotReader;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +12,7 @@ public class ReadingLogManager {
     private static Reading reading;
 
     // If the user does not have a reading log, returns null.
-    public static ReadingLog viewLog(User user, String readingName) {
+    public static ReadingLog viewLog(User user) {
         ReadingLog log = null;
         if (logs.containsKey(user)) {
             log = logs.get(user);
