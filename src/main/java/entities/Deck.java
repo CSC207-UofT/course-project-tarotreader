@@ -9,17 +9,20 @@ public class Deck {
      */
     public static ArrayList<Card> cardList;
 
+
     static {
         try {
-            cardList = CardInit.getCardList();
+            ArrayList<Card> cardsToAdd = CardInit.getCardList();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static ArrayList<Card> getDeck(){
-        /* Returns a full deck of cards, sorted */
-        return cardList;
+    public void addAll(ArrayList<Card> cardsToAdd){
+        cardList.addAll(cardsToAdd);
     }
 
+    public static ArrayList<Card> getDeck(){
+        return cardList;
+    }
 }
