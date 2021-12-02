@@ -20,6 +20,7 @@ public class UserGenerator {
      */
     //Generates and Serializes the User object
     public static void generateUser(String username, String password, int year, int month, int day) {
+
         User user = new User(username, password, year, month, day); //Creates the User object
         //Tries to serialize the object in this try block
         try {
