@@ -24,6 +24,26 @@ public class ReadingLogManager {
         return log;
     }
 
+    public static String viewReading(User user, String name) {
+        ReadingLog log = null;
+        if (logs.containsKey(user)) {
+            log = logs.get(user);
+        }
+        //*assert log != null;
+        //*if (log.readings.containsKey(readingName)) {
+        //    reading = log.readings.get(readingName);
+        //}
+        assert log != null;
+        Map<String, Reading> readings = log.getReadings();
+        if (readings.containsKey(name)){
+            Reading selected = readings.get(reading.name);
+            return selected.toString();
+        }
+        else{
+            return "Reading does not exist";
+        }
+    }
+
     // Returns true if the reading is successfully added to the log, false otherwise.
     public static boolean logReading(User user, Reading reading) {
         if (logs.containsKey(user)) {
