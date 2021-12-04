@@ -6,7 +6,7 @@ import java.io.*;
 // focusing on the creation of a user and checking whether the data is stored in the .ser file
 
 public class UserTest {
-    User u = new User();
+    User u = new User("abc", "Aa123bcbcb", 2000, 1, 1);
 
     public UserTest() {
 
