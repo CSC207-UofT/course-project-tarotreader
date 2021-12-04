@@ -22,7 +22,7 @@ public class UserTest {
             out.writeObject(u);
             out.close();
             fileOut.close();
-            System.out.printf("Serialized data is saved in /tmp/user.ser");
+            System.out.print("Serialized data is saved in /tmp/user.ser");
         } catch (IOException i) {
             i.printStackTrace();
         }
