@@ -24,8 +24,7 @@ public class ReadingLogTest {
             ReadingLog readingLog = new ReadingLog(u);
             Spread s = new Spread("ExampleSpread", "50");
             ArrayList<Card> a = new ArrayList<>();
-            Reading r = new Reading(u, s);
-            r.addCardMeanings(a);
+            Reading r = new Reading(a, u, s);
             readingLog.addToLog(r);
             assert !readingLog.getReadings().isEmpty();
         } catch (Exception e) {
