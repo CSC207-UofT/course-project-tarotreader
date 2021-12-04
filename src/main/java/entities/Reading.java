@@ -16,28 +16,25 @@ public class Reading implements Serializable {
     public String readingName;
     public ArrayList<String> reading;
     public String name;
-    //public Spread spread;
     private String spreadName;
 
 
-    public Reading (User user, Spread spread){
+    public Reading (ArrayList<Card> chosenCards, User user, Spread spread){
         this.reading = new ArrayList<>();
         this.name = user.username;
         //this.spread = spread;
         this.readingName = "";
         this.spreadName = spread.getSpreadName();
-        for (Card c: chosenCards){
-            this.reading.add(c.getMeaning(spread.getRequiredMeaningType()));
-        }
-
+        addCardMeanings(chosenCards, spread);
     }
+
     /*toString method that prints out the reading according to the spread chosen by the user and in a way that user can
     understand easily.
      */
 
-    public void addCardMeanings(ArrayList<Card> pickedCards) {
+    public void addCardMeanings(ArrayList<Card> pickedCards, Spread spread) {
         for (Card c: pickedCards){
-            this.reading.add(c.getMeaning());
+            this.reading.add(c.getMeaning(spread.getRequiredMeaningType()));
         }
     }
 
