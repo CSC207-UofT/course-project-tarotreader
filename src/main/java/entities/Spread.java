@@ -15,8 +15,8 @@ public class Spread {
      * Holds constructor and methods for Spread objects
      */
 
-    private String spreadName;
-    private int numberOfCards;
+    private final String spreadName;
+    private final int numberOfCards;
     private final String requiredMeaningType;
 
     public Spread(String spreadName, String numberOfCards) throws WrongSpreadType{
