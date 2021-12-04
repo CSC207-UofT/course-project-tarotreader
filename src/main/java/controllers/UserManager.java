@@ -14,19 +14,6 @@ import java.io.ObjectOutputStream;
 
 public class UserManager {
 
-    public static void create_user(String username, String password, int year, int month, int day) {
-        UserGenerator.generateUser(username, password, year, month, day);
-    }
-
-    public static void login_user(String username, String password) {
-        try {
-            LogIn.login(username, password);
-        }
-        catch (Exception e) {
-            System.out.println("Wrong password");
-        }
-    }
-
     public static void logReading(User user, Reading reading) {
         ReadingLogger readingLogger = new ReadingLogger(user);
         readingLogger.logReading(reading);
