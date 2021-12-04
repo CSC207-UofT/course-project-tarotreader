@@ -26,6 +26,10 @@ public class Reading implements Serializable {
         //this.spread = spread;
         this.readingName = "";
         this.spreadName = spread.getSpreadName();
+        for (Card c: chosenCards){
+            this.reading.add(c.getMeaning(spread.getRequiredMeaningType()));
+        }
+
     }
     /*toString method that prints out the reading according to the spread chosen by the user and in a way that user can
     understand easily.
