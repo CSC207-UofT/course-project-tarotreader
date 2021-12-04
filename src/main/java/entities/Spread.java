@@ -39,7 +39,9 @@ public class Spread {
         /* Returns the name of this spread */
         return this.spreadName;
     }
-
+     public String getRequiredMeaningType(){
+        return this.requiredMeaningType;
+     }
     public int getNumCards(){
         /* Returns the number of cards in this spread */
         return this.numberOfCards;
