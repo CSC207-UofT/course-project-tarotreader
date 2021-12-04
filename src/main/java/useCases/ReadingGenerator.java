@@ -48,13 +48,6 @@ public class ReadingGenerator {
         return newReading;
     }
 
-    public ArrayList<Card> getPickedCards(ArrayList<Card> shuffledDeck, ArrayList<Integer> indexOfCards){
-        ArrayList<Card> pickedCards = new ArrayList<>();
-        for(Integer i: indexOfCards){
-            pickedCards.add(shuffledDeck.get(i));
-        }
-        return pickedCards;
-    }
     // Method that enables user to name the readings.
     public void nameReading(String name, Reading reading){
         reading.readingName = name;
