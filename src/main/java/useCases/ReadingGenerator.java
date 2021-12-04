@@ -43,8 +43,7 @@ public class ReadingGenerator {
     public static Reading generateReading(User user, Spread spread, ArrayList<Card> shuffledDeck, ArrayList<Integer> indexOfCards){
         //ArrayList<Card> shuffledDeck = shuffleDeck(shuffle);
         ArrayList<Card> pickedCards = pickCard(shuffledDeck, indexOfCards);
-        var newReading = new Reading(user, spread);
-        newReading.addCardMeanings(pickedCards);
+        var newReading = new Reading(pickedCards, user, spread);
         newReading.setReadingName(user.getUsername() + user.getReadingLog().getReadings().size());
         return newReading;
     }
