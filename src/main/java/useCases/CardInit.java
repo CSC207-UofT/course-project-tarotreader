@@ -20,12 +20,14 @@ public class CardInit {
         while (i < length){     // iterates through data to initialize each card object
             String[] currLine = data.get(i);
             Card newCard = null;
-            if (currLine.length == 6) {     // If currLine has 4 elements, use Major card constructor
+            if (currLine.length == 9) {     // If currLine has 4 elements, use Major card constructor
                 newCard = new Card(currLine[0].strip(), currLine[1].strip(), currLine[2].strip(), currLine[3].strip(),
-                        currLine[4].strip(), currLine[5].strip());
-            } else if (currLine.length == 7) {      // Else currLine will have 5 elements, use Minor card constructor
+                        currLine[4].strip(), currLine[5].strip(), currLine[6].strip(), currLine[7].strip(),
+                        currLine[8].strip());
+            } else if (currLine.length == 10) {      // Else currLine will have 5 elements, use Minor card constructor
                 newCard = new Card(currLine[0].strip(), currLine[1].strip(), currLine[2].strip(), currLine[3].strip(),
-                        currLine[4].strip(), currLine[5].strip(), currLine[6].strip());
+                        currLine[4].strip(), currLine[5].strip(), currLine[6].strip(), currLine[7].strip(),
+                        currLine[8].strip(), currLine[9].strip());
             }
             cardList.add(newCard);      // Add each newly constructed card to cardList
             i ++;
