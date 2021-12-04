@@ -1,3 +1,4 @@
+import controllers.LoginController;
 import controllers.ReadingLogManager;
 import controllers.UserManager;
 import entities.*;
@@ -55,7 +56,7 @@ public class CommandLineInterface{
                 // Do Login
                 try {
                     // Try login
-                    User userLoggedIn = LogIn.login(username, password);
+                    User userLoggedIn = (User) LoginController.getInstance().login(username, password);
                     // Call getCardList() to get the card list
                     ArrayList<Card> cardList = CardInit.getCardList();
                     // Ask for Spread

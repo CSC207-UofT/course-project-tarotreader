@@ -13,14 +13,20 @@ import entities.User;
 //A class to handle the Login functionality for different users
 public class LogIn {
 
+    private final String username;
+    private final String password;
+
+    public LogIn(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     /**
-     * @param username: username of the User object to deserialize
-     * @param password: password of the User object to deserialize
+     *
      * @return Returns the logged in User if such user exists.
      * @throws WrongPasswordException Throws exception to tell the command line interface to prompt the user for username and password again
      */
-    public static User login(String username, String password) throws WrongPasswordException {
+    public User login() throws WrongPasswordException {
 
         User loggedInUser = null; //initialize the User object as null
         //This try block tries to deserialize the user based on filename (the name of the user)
@@ -50,7 +56,7 @@ public class LogIn {
     }
 
     //Exception class for specific case of wrong passwords.
-    private static class WrongPasswordException extends Exception {
+    private class WrongPasswordException extends Exception {
         public WrongPasswordException(String errorMessage) {
             super(errorMessage);
         }
