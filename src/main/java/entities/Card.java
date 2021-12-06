@@ -93,9 +93,15 @@ public class Card{
     public String toString() {
         //Ternary operator to determine whether the header should write Major or Minor based on the value of isMajor
         String majorOrMinor = isMajor ? "(Major)" : "(Minor)";
-        return getName() + " " + majorOrMinor + "\n" + suit + "\n" + "General Meaning: " +
-                getMeaning("General") + "\n" + "Love Meaning: " + getMeaning("Love") + "\n" +
-                "Career Meaning: " + getMeaning("Career");
+        if(this.isMajor){
+            return getName() + " " + majorOrMinor + "\n" + "General Meaning: " +
+                    getMeaning("General") + "\n" + "Love Meaning: " + getMeaning("Love") + "\n" +
+                    "Career Meaning: " + getMeaning("Career");
+        }else{
+            return getName() + " " + majorOrMinor + "\n" + suit + "\n" + "General Meaning: " +
+                    getMeaning("General") + "\n" + "Love Meaning: " + getMeaning("Love") + "\n" +
+                    "Career Meaning: " + getMeaning("Career");
+        }
     }
 }
 
