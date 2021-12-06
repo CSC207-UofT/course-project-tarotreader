@@ -12,14 +12,10 @@ public class Deck {
 
     static {
         try {
-            ArrayList<Card> cardsToAdd = CardInit.getCardList();
+            cardList = CardInit.getCardList();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void addAll(ArrayList<Card> cardsToAdd){
-        cardList.addAll(cardsToAdd);
     }
 
     public static ArrayList<Card> getDeck(){
