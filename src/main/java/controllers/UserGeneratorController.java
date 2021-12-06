@@ -1,6 +1,12 @@
 package controllers;
 
+import entities.User;
 import useCases.UserGenerator;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 public class UserGeneratorController {
 
@@ -22,13 +28,21 @@ public class UserGeneratorController {
             return false;
         }
     }
-    public Object getExistingUser(String username) {
-        UserGenerator getExistingUser = new UserGenerator();
+    public static User getExistingUser(String username) {
+        User existingUser = null;
         try {
-            return UserGenerator.getExistingUser(username);
+            FileInputStream inputStream = new FileInputStream(username + ".ser");
+            ObjectInputStream in = new ObjectInputStream(inputStream);
+            existingUser = (User) in.readObject();
+            in.close();
+            inputStream.close();
         }
-        catch (Exception e) {
-            return false;
+        catch (FileNotFoundException ex){
+            return existingUser;
         }
-}
+        catch(ClassNotFoundException | IOException ioException) {
+            ioException.printStackTrace();
+        }
+        return existingUser;
+    }
 }

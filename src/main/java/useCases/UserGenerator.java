@@ -1,5 +1,6 @@
 package useCases;
 
+import controllers.UserGeneratorController;
 import entities.User;
 
 import java.io.*;
@@ -17,11 +18,12 @@ public class UserGenerator {
      * @param month: birth month of the User object to generate
      * @param day: birthday of the User object to generate
      */
-    //Generates and Serializes the User object
     public static void generateUser(String username, String password, int year, int month, int day) {
-        //try to deserialize the User from its filename(username.ser)
+        /*
+        Generates and Serializes the User object. Try to deserialize the User from its filename(username.ser)
+         */
         User existingUser = null;
-        existingUser = getExistingUser(username);
+        existingUser = UserGeneratorController.getExistingUser(username);
         if (existingUser != null){
             System.out.println("Username already exists!");
             }
@@ -45,28 +47,13 @@ public class UserGenerator {
                 ioException.printStackTrace();
         }}
     }
-    public static User getExistingUser(String username) {
-        User existingUser = null;
-        try {
-            FileInputStream inputStream = new FileInputStream(username + ".ser");
-            ObjectInputStream in = new ObjectInputStream(inputStream);
-            existingUser = (User) in.readObject();
-            in.close();
-            inputStream.close();
-        }
-        catch (FileNotFoundException ex){
-            return existingUser;
-        }
-        catch(ClassNotFoundException | IOException ioException) {
-            ioException.printStackTrace();
-            }
-        return existingUser;
-    }
     public static boolean validPassword(String password){
-        //enforces a password that is shown by the regex shown below.
-        // a "valid" password consists of at least one digit, one lowercase letter,
-        // one uppercase letter, and it needs to be between 8-20 characters without a
-        // whitespace.
+        /*
+        Enforces a password that is shown by the regex shown below.
+        a "valid" password consists of at least one digit, one lowercase letter,
+        one uppercase letter, and it needs to be between 8-20 characters without a
+        whitespace. Return true iff password matches the pattern.
+         */
         String regex = "^(?=.*[0-9])"
                 + "(?=.*[a-z])(?=.*[A-Z])"
                 + "(?=\\S+$).{8,20}$";
@@ -74,12 +61,14 @@ public class UserGenerator {
         if (password == null) {
             return false;
         }
-        //return true iff password matches the pattern.
         Matcher m = p.matcher(password);
         return m.matches();
         }
 
     public static boolean validBirthdate(int year, int month, int day) {
+        /*
+        Checks if a birthdate is valid.
+         */
         if ((year < 1900) | (year > 2021) | (month > 12) | (month < 1) | (day < 1) | (day > 31)) {
             return false;
         } else if (month == 2) {

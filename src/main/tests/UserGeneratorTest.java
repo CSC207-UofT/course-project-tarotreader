@@ -22,19 +22,6 @@ public class UserGeneratorTest {
                 .trim());
     }
     @Test
-    public void testGetExistingUserForExistingUser(){
-        assert UserGenerator.getExistingUser("eliferzincan") != null;
-    }
-    @Test
-    public void testGetExistingUserForNotExistingUser(){
-        Assert.assertNull(UserGenerator.getExistingUser("doesnotexist"));
-    }
-    @Test
-    public void testGenerateUserForNotExistingUser(){
-        UserGenerator.generateUser("hahadoesnotexist", "password", 2001, 4, 30);
-        assert UserGenerator.getExistingUser("hahadoesnotexist") != null;
-    }
-    @Test
     public void testValidBirthdateForInvalidYear(){
         Assert.assertFalse(UserGenerator.validBirthdate(2111, 4, 30));
     }
