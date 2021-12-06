@@ -7,10 +7,9 @@ import entities.Reading;
 public class ReadingLog implements Serializable {
     //Holds all users and their related HashMap of String names and Readings for each user.
     private HashMap<String, Reading> readings;
-    private User belongingUser;
 
-    public ReadingLog(User user) {
-        this.belongingUser = user;
+
+    public ReadingLog() {
         this.readings = new HashMap<String, Reading>();
     }
 
