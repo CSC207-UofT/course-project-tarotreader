@@ -1,23 +1,35 @@
 package controllers;
 //package useCases;
 
+
+import entities.Reading;
+import entities.User;
+import useCases.LogIn;
+import useCases.ReadingLogger;
 import useCases.UserGenerator;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 public class UserManager {
-    // instance variables
-    private String UserName;
-    private String password;
-    private String date;
 
-    // UserManager constructor
-
-    public UserManager(String initUserName, String initPassword, String initDate){
-        UserName = initUserName;
-        password = initPassword;
-        date = initDate;
+    public static void logReading(User user, Reading reading) {
+        ReadingLogger readingLogger = new ReadingLogger(user);
+        readingLogger.logReading(reading);
     }
 
-    public static void login_user() {
-        //logs.put(user, user.getReadingLog());
+    public static void updateUser(User user) {
+        try {
+            FileOutputStream outFile = new FileOutputStream(user.getUsername() + ".ser");
+            ObjectOutputStream out = new ObjectOutputStream(outFile);
+            out.writeObject(user); //writes the user to "username.ser"
+            out.close();
+            outFile.close();
+        }
+        catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
     }
+
 }

@@ -14,32 +14,41 @@ public class Reading implements Serializable {
      * spread: holds the Spread object chosen by the user. Spread affects the way that reading is printed for the user.
      */
     public String readingName;
-    public ArrayList<Card> chosenCards;
     public ArrayList<String> reading;
     public String name;
-    public Spread spread;
+    private String spreadName;
 
 
-    public Reading (ArrayList<Card> pickedCards, User user, Spread spread){
-        this.chosenCards = pickedCards;
+    public Reading (ArrayList<Card> chosenCards, User user, Spread spread){
         this.reading = new ArrayList<>();
         this.name = user.username;
-        this.spread = spread;
+        //this.spread = spread;
         this.readingName = "";
-        for (Card c: chosenCards){
-            this.reading.add(c.getMeaning());
-        }
+        this.spreadName = spread.getSpreadName();
+        addCardMeanings(chosenCards, spread);
     }
+
     /*toString method that prints out the reading according to the spread chosen by the user and in a way that user can
     understand easily.
      */
 
+    public void addCardMeanings(ArrayList<Card> pickedCards, Spread spread) {
+        for (Card c: pickedCards){
+            this.reading.add(c.getMeaning(spread.getRequiredMeaningType()));
+        }
+    }
+
+    public void setReadingName(String name) {
+        this.readingName = name;
+    }
+
+
     @Override
     public String toString(){
         StringBuilder myString = new StringBuilder();
-        String s = "Hey " + this.name + "! You have chosen the " + spread.getSpreadName() + ". Here is your reading for today...\n";
+        String s = "Hey " + this.name + "! You have chosen the " + spreadName + ". Here is your reading for today...\n";
 
-        switch (spread.getSpreadName()) {
+        switch (spreadName) {
             case "Past Present Future Reading": {
                 int i = 0;
                 for (String r : this.reading) {

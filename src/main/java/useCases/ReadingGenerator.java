@@ -6,7 +6,6 @@ import entities.User;
 import entities.Spread;
 import entities.Reading;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -44,8 +43,11 @@ public class ReadingGenerator {
     public static Reading generateReading(User user, Spread spread, ArrayList<Card> shuffledDeck, ArrayList<Integer> indexOfCards){
         //ArrayList<Card> shuffledDeck = shuffleDeck(shuffle);
         ArrayList<Card> pickedCards = pickCard(shuffledDeck, indexOfCards);
-        return new Reading(pickedCards, user, spread);
+        var newReading = new Reading(pickedCards, user, spread);
+        newReading.setReadingName(user.getUsername() + user.getReadingLog().getReadings().size());
+        return newReading;
     }
+
     // Method that enables user to name the readings.
     public void nameReading(String name, Reading reading){
         reading.readingName = name;

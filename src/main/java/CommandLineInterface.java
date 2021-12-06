@@ -1,4 +1,6 @@
+import controllers.LoginController;
 import controllers.ReadingLogManager;
+import controllers.UserManager;
 import entities.*;
 import useCases.*;
 import java.util.ArrayList;
@@ -54,7 +56,7 @@ public class CommandLineInterface{
                 // Do Login
                 try {
                     // Try login
-                    User userLoggedIn = LogIn.login(username, password);
+                    User userLoggedIn = (User) LoginController.getInstance().login(username, password);
                     // Call getCardList() to get the card list
                     ArrayList<Card> cardList = CardInit.getCardList();
                     // Ask for Spread
@@ -86,13 +88,14 @@ public class CommandLineInterface{
                     System.out.println("Would you like to log this reading? Type Y for yes and N for no:");
                     String log = account.nextLine();
                     if(Objects.equals(log, "Y")){
-                        ReadingLogger thisLogger = new ReadingLogger(userLoggedIn);
-                        thisLogger.logReading(theReading);
+                        UserManager.logReading(userLoggedIn, theReading);
+                        UserManager.updateUser(userLoggedIn);
                     }
                     System.out.println("Would you like to view your reading log? Type Y for yes and N for no:");
                     String viewLog = account.nextLine();
                     if(Objects.equals(viewLog, "Y")){
-                        System.out.println(ReadingLogManager.viewLog(userLoggedIn));
+                        System.out.println(ReadingLogManager.viewLog(userLoggedIn)); //This doesn't work
+                        System.out.println(userLoggedIn.getReadingLog());
                     }
 
                 } catch(Exception e) {

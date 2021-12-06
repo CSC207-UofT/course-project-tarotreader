@@ -4,7 +4,6 @@ import entities.Card;
 import entities.Deck;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class CardLookup {
 
@@ -27,7 +26,7 @@ public class CardLookup {
      * @param searchQuery the string to search for
      * @return a list of cards whose names contain the query string
      */
-    public static ArrayList<Card> searchCard(String searchQuery) {
+    public static String searchCard(String searchQuery) {
         ArrayList<Card> deck = Deck.getDeck();
         ArrayList<Card> queriedCards = new ArrayList<>();
         for (Card card: deck) {
@@ -36,7 +35,9 @@ public class CardLookup {
             }
         }
         // TODO: Add check to CLI for return value null of searchCard
-        return queriedCards;
+        for(Card c: queriedCards){
+            return c.toString();
+        }
+        return "No cards have been selected";
     }
-
 }

@@ -11,7 +11,7 @@ public class SpreadInit {
      */
     // private static ArrayList<Spread> spreadList = new ArrayList<>();
 
-    public static ArrayList<Spread> getSpreads() throws IOException {
+    public static ArrayList<Spread> getSpreads() throws IOException, Spread.WrongSpreadType {
         ArrayList<String[]> data = DataReader.readData("resources/spreadConstants");// Reads data from constants
                                                                                             // file using DataReader
                                                                                             // readData() method

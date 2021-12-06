@@ -6,7 +6,7 @@ import java.io.*;
 // focusing on the creation of a user and checking whether the data is stored in the .ser file
 
 public class UserTest {
-    User u = new User();
+    User u = new User("elif", "elif3004", 2001, 4, 30);
 
     public UserTest() {
 
@@ -22,7 +22,7 @@ public class UserTest {
             out.writeObject(u);
             out.close();
             fileOut.close();
-            System.out.printf("Serialized data is saved in /tmp/user.ser");
+            System.out.print("Serialized data is saved in /tmp/user.ser");
         } catch (IOException i) {
             i.printStackTrace();
         }
