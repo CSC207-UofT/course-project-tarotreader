@@ -29,10 +29,6 @@ public class ReadingLogManager {
         if (logs.containsKey(user)) {
             log = logs.get(user);
         }
-        //*assert log != null;
-        //*if (log.readings.containsKey(readingName)) {
-        //    reading = log.readings.get(readingName);
-        //}
         assert log != null;
         Map<String, Reading> readings = log.getReadings();
         if (readings.containsKey(name)){
