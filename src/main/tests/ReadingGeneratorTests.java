@@ -20,8 +20,8 @@ public class ReadingGeneratorTests {
 
     @Test
     public void GenerateReadingTest() throws Exception {
-        UserGenerator.generateUser("test", "test123", 1999, 1, 1);
-        User thisUser = (User) LoginController.getInstance().login("test", "test123");
+        UserGenerator.generateUser("test", "TestTest123", 1999, 1, 1);
+        User thisUser = (User) LoginController.getInstance().login("test", "TestTest123");
         ArrayList<Integer> pickedIndex = new ArrayList<>();
         ArrayList<Spread> spreadList = SpreadInit.getSpreads();
         ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(3);
