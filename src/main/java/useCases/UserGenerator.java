@@ -1,53 +1,26 @@
 package useCases;
-
-import controllers.UserGeneratorController;
 import entities.User;
 
-import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//Class for generating users
 
 public class UserGenerator {
     /**
-     *
+     * Class for generating users.
      * @param username: username of the User object to generate
      * @param password: password of the User object to generate
      * @param year: birth year of the User object to generate
      * @param month: birth month of the User object to generate
      * @param day: birthday of the User object to generate
      */
-    public static void generateUser(String username, String password, int year, int month, int day) {
+    public User generateUser(String username, String password, int year, int month, int day) {
         /*
-        Generates and Serializes the User object. Try to deserialize the User from its filename(username.ser)
+        Generates a User object.
          */
-        User existingUser = null;
-        existingUser = UserGeneratorController.getExistingUser(username);
-        if (existingUser != null){
-            System.out.println("Username already exists!");
-            }
-        else if (!validPassword(password)) {
-            System.out.println("Please select a password that is valid.");
-        }
-        else if (!validBirthdate(year, month, day)){
-            System.out.println("Please enter a valid birthdate.");
-        }
-        else{
-            User user = new User(username, password, year, month, day); //Creates the User object
-            //Tries to serialize the object in this try block
-            try {
-                FileOutputStream outFile = new FileOutputStream(username + ".ser");
-                ObjectOutputStream out = new ObjectOutputStream(outFile);
-                out.writeObject(user); //writes the user to "username.ser"
-                out.close();
-                outFile.close();
-            }
-            catch (IOException ioException) {
-                ioException.printStackTrace();
-        }}
+        return new User(username, password, year, month, day);
     }
-    public static boolean validPassword(String password){
+    public boolean validPassword(String password){
         /*
         Enforces a password that is shown by the regex shown below.
         a "valid" password consists of at least one digit, one lowercase letter,
@@ -65,7 +38,7 @@ public class UserGenerator {
         return m.matches();
         }
 
-    public static boolean validBirthdate(int year, int month, int day) {
+    public boolean validBirthdate(int year, int month, int day) {
         /*
         Checks if a birthdate is valid.
          */
