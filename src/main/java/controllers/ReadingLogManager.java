@@ -8,27 +8,20 @@ import java.util.Map;
 
 
 public class ReadingLogManager {
-    private static final Map<User, ReadingLog> logs = new HashMap<>();
+    private static final ReadingLog logs = new ReadingLog();
     private static Reading reading;
 
     // If the user does not have a reading log, returns null.
     public static ReadingLog viewLog(User user) {
-        ReadingLog log = null;
-        if (logs.containsKey(user)) {
-            log = logs.get(user);
-        }
         //*assert log != null;
         //*if (log.readings.containsKey(readingName)) {
         //    reading = log.readings.get(readingName);
         //}
-        return log;
+        return user.getReadingLog();
     }
 
     public static String viewReading(User user, String name) {
-        ReadingLog log = null;
-        if (logs.containsKey(user)) {
-            log = logs.get(user);
-        }
+        ReadingLog log = user.getReadingLog();
         assert log != null;
         Map<String, Reading> readings = log.getReadings();
         if (readings.containsKey(name)){
@@ -41,24 +34,26 @@ public class ReadingLogManager {
     }
 
     // Returns true if the reading is successfully added to the log, false otherwise.
-    public static boolean logReading(User user, Reading reading) {
-        if (logs.containsKey(user)) {
-            logs.get(user).addToLog(reading);
-            return true;
-        }
-        return false;
+    public static void logReading(User user, Reading reading) {
+        ReadingLog log = user.getReadingLog();
+        log.addToLog(reading);
     }
 
-    public static void addLog(User user) {
-        logs.put(user, user.getReadingLog());
+    public static void removeLog(User user) {
+        ReadingLog log = user.getReadingLog();
+        Map<String, Reading> readings = log.getReadings();
+        readings.clear();
     }
 
-    public static boolean remove_log(User user) {
-        if (logs.containsKey(user)) {
-            logs.get(user).addToLog(reading);
+    public boolean discardReading(User user, String readingName) {
+        ReadingLog log = user.getReadingLog();
+        Map<String, Reading> readings = log.getReadings();
+        if (readings.containsKey(readingName)) {
+            readings.remove(readingName);
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
     }
 
