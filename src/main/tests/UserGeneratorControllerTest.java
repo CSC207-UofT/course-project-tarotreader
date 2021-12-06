@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
 import useCases.UserGenerator;
@@ -34,12 +33,11 @@ public class UserGeneratorControllerTest {
     }
     @Test
     public void testGenerateExistingUserForExistingUser() {
-        UserGeneratorController userGeneratorController = new UserGeneratorController();
         byte[] array = new byte[7];
         new Random().nextBytes(array);
         String generatedString = new String(array, StandardCharsets.UTF_8);
-        userGeneratorController.generateUser(generatedString, "Password123", 2001, 4, 30);
-        userGeneratorController.generateUser(generatedString, "Password123", 2001, 4, 30);
+        UserGeneratorController.getInstance().generateUser(generatedString, "Password123", 2001, 4, 30);
+        UserGeneratorController.getInstance().generateUser(generatedString, "Password123", 2001, 4, 30);
         Assert.assertEquals("Username already exists!", outputStreamCaptor.toString()
                 .trim());
     }
@@ -48,20 +46,17 @@ public class UserGeneratorControllerTest {
         byte[] array = new byte[7];
         new Random().nextBytes(array);
         String generatedString = new String(array, StandardCharsets.UTF_8);
-        UserGeneratorController userGeneratorController = new UserGeneratorController();
-        assert userGeneratorController.generateUser(generatedString, "Password123", 2001, 4, 30) != null;
+        assert UserGeneratorController.getInstance().generateUser(generatedString, "Password123", 2001, 4, 30) != null;
     }
     @Test
     public void testGenerateExistingUserInvalidPassword() {
-        UserGeneratorController userGeneratorController = new UserGeneratorController();
-        userGeneratorController.generateUser("userforpasswordtrial", "invalid", 2001, 4, 30);
+        UserGeneratorController.getInstance().generateUser("userforpasswordtrial", "invalid", 2001, 4, 30);
         Assert.assertEquals("Please select a password that is valid.", outputStreamCaptor.toString()
                 .trim());
     }
     @Test
     public void testGenerateExistingUserInvalidBirthdate() {
-        UserGeneratorController userGeneratorController = new UserGeneratorController();
-        userGeneratorController.generateUser("userforbirthdatetrial", "Password123", 2101, 4, 30);
+        UserGeneratorController.getInstance().generateUser("userforbirthdatetrial", "Password123", 2101, 4, 30);
         Assert.assertEquals("Please enter a valid birthdate.", outputStreamCaptor.toString()
                 .trim());
     }

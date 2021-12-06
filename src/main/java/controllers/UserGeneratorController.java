@@ -9,7 +9,7 @@ public class UserGeneratorController {
 
     private static final UserGeneratorController controllerInstance = new UserGeneratorController();
 
-    public UserGeneratorController(){
+    private UserGeneratorController(){
         /*
         Private constructor so that client-side cannot instantiate this singleton
          */
