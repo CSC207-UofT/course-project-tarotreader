@@ -16,7 +16,8 @@ public class Reading implements Serializable {
     public String readingName;
     public ArrayList<String> reading;
     public String name;
-    private String spreadName;
+    public String spreadName;
+    public ArrayList<Card> pickedCards;
 
 
     public Reading (ArrayList<Card> chosenCards, User user, Spread spread){
@@ -24,6 +25,7 @@ public class Reading implements Serializable {
         this.name = user.username;
         //this.spread = spread;
         this.readingName = "";
+        this.pickedCards = chosenCards;
         this.spreadName = spread.getSpreadName();
         addCardMeanings(chosenCards, spread);
     }

@@ -1,6 +1,7 @@
 import controllers.LoginController;
 import controllers.ReadingLogManager;
 import controllers.UserManager;
+import controllers.TarotUIController;
 import entities.*;
 import useCases.*;
 import java.util.ArrayList;
@@ -84,6 +85,12 @@ public class CommandLineInterface{
                     // Generate Reading
                     Reading theReading = ReadingGenerator.generateReading(userLoggedIn, spread, shuffledDeck, indicesChosen);
                     // Present the Reading to the User
+                    //Tarot UI Runner STILL TESTING
+                    System.out.println("yarrak");
+                    TarotUIController appController = new TarotUIController(theReading);
+                    System.out.println("yarrakkkk");
+                    System.out.println(appController.reading);
+                    appController.start();
                     System.out.println(theReading.toString());
                     System.out.println("Would you like to log this reading? Type Y for yes and N for no:");
                     String log = account.nextLine();
