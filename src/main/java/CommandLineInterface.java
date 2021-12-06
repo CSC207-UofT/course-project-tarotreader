@@ -1,5 +1,5 @@
 import controllers.LoginController;
-ReadingGeneratorController
+import controllers.ReadingGeneratorController;
 import useCases.ReadingLogManager;
 
 import controllers.UserGeneratorController;
