@@ -22,4 +22,13 @@ public class UserGeneratorController {
             return false;
         }
     }
+    public Object getExistingUser(String username) {
+        UserGenerator getExistingUser = new UserGenerator();
+        try {
+            return UserGenerator.getExistingUser(username);
+        }
+        catch (Exception e) {
+            return false;
+        }
+}
 }
