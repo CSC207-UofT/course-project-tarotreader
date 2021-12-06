@@ -11,6 +11,13 @@ import java.util.Objects;
 import java.util.Scanner;
 //This class is to run the program on the command line
 public class CommandLineInterface{
+
+    private final String LOG_IN = "1";
+    private final String CREATE_USER = "2";
+    private final String EXIT = "q";
+    private final String CONFIRM = "Y";
+    private final String LIST_CARDS = "ls";
+
     public static void main(String[] args) {
         //Will continue to loop until user presses "q"
         while (true) {
@@ -109,4 +116,9 @@ public class CommandLineInterface{
 
 
     }
+
+    public void welcomeUser() {
+
+    }
+
 }

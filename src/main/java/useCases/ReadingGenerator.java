@@ -50,7 +50,7 @@ public class ReadingGenerator {
 
     // Method that enables user to name the readings.
     public void nameReading(String name, Reading reading){
-        reading.readingName = name;
+        reading.setReadingName(name);
     }
 }
 
