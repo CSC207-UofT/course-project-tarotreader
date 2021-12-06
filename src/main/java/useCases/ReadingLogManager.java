@@ -10,7 +10,7 @@ import java.util.Map;
 public class ReadingLogManager {
 
     // If the user does not have a reading log, returns null.
-    public static ReadingLog viewLog(User user) {
+    public ReadingLog viewLog(User user) {
         //*assert log != null;
         //*if (log.readings.containsKey(readingName)) {
         //    reading = log.readings.get(readingName);
@@ -18,7 +18,7 @@ public class ReadingLogManager {
         return user.getReadingLog();
     }
 
-    public static String viewReading(User user, String name) {
+    public String viewReading(User user, String name) {
         ReadingLog log = user.getReadingLog();
         assert log != null;
         Map<String, Reading> readings = log.getReadings();
@@ -32,12 +32,12 @@ public class ReadingLogManager {
     }
 
     // Returns true if the reading is successfully added to the log, false otherwise.
-    public static void logReading(User user, Reading reading) {
+    public void logReading(User user, Reading reading) {
         ReadingLog log = user.getReadingLog();
         log.addToLog(reading);
     }
 
-    public static void removeLog(User user) {
+    public void removeLog(User user) {
         ReadingLog log = user.getReadingLog();
         Map<String, Reading> readings = log.getReadings();
         readings.clear();
@@ -53,6 +53,10 @@ public class ReadingLogManager {
             return false;
         }
     }
+
+    public void nameReading(User user, String readingName, String newReadingName) {
+        user.getReadingLog().getReadings().get(readingName).setReadingName(newReadingName);
     }
+}
 
 

@@ -11,7 +11,7 @@ public class ReadingLogManagerTest {
     public void viewLogTest(){
         User user = new User("test", "test123", 1999, 1, 1);
         ReadingLog log1 = user.getReadingLog();
-        ReadingLog log2 = ReadingLogManager.viewLog(user);
+        ReadingLog log2 = new ReadingLogManager().viewLog(user);
         assert(Objects.equals(log1, log2));
     }
 
@@ -27,7 +27,7 @@ public class ReadingLogManagerTest {
         Reading reading = ReadingGenerator.generateReading(user, spread, deck, index);
         reading.readingName = "test";
         String reading1 = reading.toString();
-        String reading2 = ReadingLogManager.viewReading(user, "test");
+        String reading2 = new ReadingLogManager().viewReading(user, "test");
         assert(Objects.equals(reading1, reading2));
     }
 }
