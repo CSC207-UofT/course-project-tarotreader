@@ -8,8 +8,6 @@ import java.util.Map;
 
 
 public class ReadingLogManager {
-    private static final ReadingLog logs = new ReadingLog();
-    private static Reading reading;
 
     // If the user does not have a reading log, returns null.
     public static ReadingLog viewLog(User user) {
@@ -25,7 +23,7 @@ public class ReadingLogManager {
         assert log != null;
         Map<String, Reading> readings = log.getReadings();
         if (readings.containsKey(name)){
-            Reading selected = readings.get(reading.name);
+            Reading selected = readings.get(name);
             return selected.toString();
         }
         else{
