@@ -1,4 +1,4 @@
-package controllers;
+package useCases;
 import entities.Reading;
 import entities.ReadingLog;
 import entities.User;

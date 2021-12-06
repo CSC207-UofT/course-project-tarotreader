@@ -1,5 +1,5 @@
 import controllers.LoginController;
-import controllers.ReadingLogManager;
+import useCases.ReadingLogManager;
 import controllers.UserManager;
 import entities.*;
 import useCases.*;
