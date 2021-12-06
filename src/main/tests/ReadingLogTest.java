@@ -25,14 +25,14 @@ public class ReadingLogTest {
         try {
             User u = new User("eliferzincan", "20012001", 2001, 4, 30);
             ReadingLog readingLog = new ReadingLog(u);
-            Spread s = new Spread("ExampleSpread", "50");
             ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(3);
             ArrayList<Card> a = new ArrayList<>();
-            ArrayList<Integer> indecies = new ArrayList<>();
-            indecies.add(1);
-            indecies.add(2);
-            indecies.add(3);
-            a.addAll(ReadingGenerator.pickCard(shuffledDeck, indecies));
+            ArrayList<Integer> indicies = new ArrayList<>();
+            Spread s = Spread.getSpreadList().get(0);
+            indicies.add(1);
+            indicies.add(2);
+            indicies.add(3);
+            a.addAll(ReadingGenerator.pickCard(shuffledDeck, indicies));
             Reading r = new Reading(a, u, s);
             r.addCardMeanings(a, s);
             readingLog.addToLog(r);
