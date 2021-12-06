@@ -7,14 +7,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ReadingLogManager {
+public class ReadingLogActions {
 
     // If the user does not have a reading log, returns null.
     public ReadingLog viewLog(User user) {
-        //*assert log != null;
-        //*if (log.readings.containsKey(readingName)) {
-        //    reading = log.readings.get(readingName);
-        //}
         return user.getReadingLog();
     }
 
