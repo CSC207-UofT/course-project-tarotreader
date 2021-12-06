@@ -51,21 +51,7 @@ public class UserGeneratorController {
         return user;
     }
     public static boolean userExists(String username) {
-        User existingUser = null;
-        try {
-            FileInputStream inputStream = new FileInputStream(username + ".ser");
-            ObjectInputStream in = new ObjectInputStream(inputStream);
-            existingUser = (User) in.readObject();
-            in.close();
-            inputStream.close();
-
-        }
-        catch (FileNotFoundException ex){
-            return false;
-        }
-        catch(ClassNotFoundException | IOException ioException) {
-            ioException.printStackTrace();
-        }
-        return existingUser != null;
+        File temporary = new File(username + ".ser");
+        return temporary.exists();
     }
 }

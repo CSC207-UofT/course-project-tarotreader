@@ -17,8 +17,9 @@ public class ReadingLogger {
     //Adds the reading generated to the user's reading log.
     public void logReading(Reading reading) {
         //*
-         // @param reading: The Reading object generated and to be added to the user's reading log.
-         //
+
+        // @param reading: The Reading object generated and to be added to the user's reading log.
+        //
         Scanner name = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter reading name");  // Ask for a reading name
         reading.readingName = name.nextLine(); // Define reading name
@@ -26,4 +27,3 @@ public class ReadingLogger {
         readingLog.addToLog(reading);
     }
 }
-
