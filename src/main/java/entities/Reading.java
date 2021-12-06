@@ -13,15 +13,15 @@ public class Reading implements Serializable {
      * name: Name of the user.
      * spread: holds the Spread object chosen by the user. Spread affects the way that reading is printed for the user.
      */
-    public String readingName;
+    private String readingName;
     public ArrayList<String> reading;
-    public String name;
+    public String username;
     private String spreadName;
 
 
     public Reading (ArrayList<Card> chosenCards, User user, Spread spread){
         this.reading = new ArrayList<>();
-        this.name = user.username;
+        this.username = user.username;
         //this.spread = spread;
         this.readingName = "";
         this.spreadName = spread.getSpreadName();
@@ -38,8 +38,13 @@ public class Reading implements Serializable {
         }
     }
 
+
     public void setReadingName(String name) {
         this.readingName = name;
+    }
+
+    public String getReadingName() {
+        return this.readingName;
     }
 
 
@@ -47,7 +52,7 @@ public class Reading implements Serializable {
     public String toString(){
 
         StringBuilder myString = new StringBuilder();
-        String s = this.readingName + "\nHey " + this.name + "! You have chosen the " + spreadName + ". Here is your reading for today...\n";
+        String s = this.readingName + "\nHey " + this.username + "! You have chosen the " + spreadName + ". Here is your reading for today...\n";
 
         switch (spreadName) {
             case "Past Present Future Reading": {

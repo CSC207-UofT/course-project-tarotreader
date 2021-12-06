@@ -1,4 +1,4 @@
-import useCases.ReadingLogManager;
+import useCases.ReadingLogActions;
 import entities.*;
 import org.junit.Test;
 import useCases.ReadingGenerator;
@@ -11,7 +11,7 @@ public class ReadingLogManagerTest {
     public void viewLogTest(){
         User user = new User("test", "test123", 1999, 1, 1);
         ReadingLog log1 = user.getReadingLog();
-        ReadingLog log2 = new ReadingLogManager().viewLog(user);
+        ReadingLog log2 = new ReadingLogActions().viewLog(user);
         assert(Objects.equals(log1, log2));
     }
 
@@ -27,7 +27,7 @@ public class ReadingLogManagerTest {
         Reading reading = ReadingGenerator.generateReading(user, spread, deck, index);
         reading.readingName = "test";
         String reading1 = reading.toString();
-        String reading2 = new ReadingLogManager().viewReading(user, "test");
+        String reading2 = new ReadingLogActions().viewReading(user, "test");
         assert(Objects.equals(reading1, reading2));
     }
 }

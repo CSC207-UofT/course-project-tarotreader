@@ -28,11 +28,16 @@ public class UserGeneratorController {
         }
         else{
             if (!userGenerator.validPassword(password)) {
-                System.out.println("Please select a password that is valid.");
+                System.out.println("Please select a password that is valid. A valid password has at least one" +
+                        "lowercase and one uppercase character, and a digit.");
                 return false;
             }
             if (!userGenerator.validBirthdate(year, month, day)){
                 System.out.println("Please enter a valid birthdate.");
+                return false;
+            }
+            if (!userGenerator.validUsername(username)){
+                System.out.println("Please enter a username that has more than 5 characters.");
                 return false;
             }
             user = userGenerator.generateUser(username, password, year, month, day);
@@ -51,21 +56,7 @@ public class UserGeneratorController {
         return user;
     }
     public static boolean userExists(String username) {
-        User existingUser = null;
-        try {
-            FileInputStream inputStream = new FileInputStream(username + ".ser");
-            ObjectInputStream in = new ObjectInputStream(inputStream);
-            existingUser = (User) in.readObject();
-            in.close();
-            inputStream.close();
-
-        }
-        catch (FileNotFoundException ex){
-            return false;
-        }
-        catch(ClassNotFoundException | IOException ioException) {
-            ioException.printStackTrace();
-        }
-        return existingUser != null;
+        File temporary = new File(username + ".ser");
+        return temporary.exists();
     }
 }

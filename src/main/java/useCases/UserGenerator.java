@@ -1,6 +1,5 @@
 package useCases;
 import entities.User;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -53,7 +52,11 @@ public class UserGenerator {
         } else if ((month == 4) | (month == 6) | (month == 9) | (month == 11)) {
             return day <= 30;
     } return true;
-}
+
+    }
+    public boolean validUsername(String username){
+        return username.length() >= 5;
+    }
 }
 
 
