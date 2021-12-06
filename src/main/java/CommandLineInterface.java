@@ -1,5 +1,8 @@
 import controllers.LoginController;
-import controllers.ReadingLogManager;
+import useCases.ReadingLogManager;
+
+import controllers.UserGeneratorController;
+
 import controllers.UserManager;
 import entities.*;
 import useCases.*;
@@ -42,7 +45,7 @@ public class CommandLineInterface{
                 int year = Integer.parseInt(yob);
 
                 // Generate a User
-                UserGenerator.generateUser(username, password, year, month, day);
+                UserGeneratorController.getInstance().generateUser(username, password, year, month, day);
                 System.out.println("User created. Redirecting to login...");
             }
             else if (entry == 1)
@@ -50,7 +53,7 @@ public class CommandLineInterface{
                 // Ask for Username
                 System.out.println("Enter username:");
                 String username = account.nextLine();
-                // Ask for Password
+                //Ask for Password
                 System.out.println("Enter password:");
                 String password = account.nextLine();
                 // Do Login
@@ -93,8 +96,8 @@ public class CommandLineInterface{
                     }
                     System.out.println("Would you like to view your reading log? Type Y for yes and N for no:");
                     String viewLog = account.nextLine();
-                    if(Objects.equals(viewLog, "Y")){
-                        System.out.println(ReadingLogManager.viewLog(userLoggedIn)); //This doesn't work
+                    if (Objects.equals(viewLog, "Y")){
+                        System.out.println(new ReadingLogManager().viewLog(userLoggedIn)); //This doesn't work
                         System.out.println(userLoggedIn.getReadingLog());
                     }
 

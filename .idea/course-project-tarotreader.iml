@@ -46,6 +46,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit5.7.0">
         <CLASSES>
@@ -62,5 +63,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+
   </component>
 </module>

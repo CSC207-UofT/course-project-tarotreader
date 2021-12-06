@@ -4,9 +4,6 @@ package controllers;
 
 import entities.Reading;
 import entities.User;
-import useCases.LogIn;
-import useCases.ReadingLogger;
-import useCases.UserGenerator;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -13,8 +13,8 @@ public class ReadingLogTest {
     @Test
     public void TestGetReadings() {
         try {
-            User u = new User("eliferzincan", "20012001", 2001, 4, 30);
-            ReadingLog readingLog = new ReadingLog(u);
+            User u = new User("eliferzincan", "Elif2001", 2001, 4, 30);
+            ReadingLog readingLog = new ReadingLog();
             assert readingLog.getReadings().isEmpty();
         } catch (Exception e) {
             e.printStackTrace();
@@ -23,8 +23,8 @@ public class ReadingLogTest {
     @Test
     public void TestAddToLog() {
         try {
-            User u = new User("eliferzincan", "20012001", 2001, 4, 30);
-            ReadingLog readingLog = new ReadingLog(u);
+            User u = new User("eliferzincan", "Elif2001", 2001, 4, 30);
+            ReadingLog readingLog = new ReadingLog();
             ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(3);
             ArrayList<Card> a = new ArrayList<>();
             ArrayList<Integer> indicies = new ArrayList<>();
@@ -34,7 +34,7 @@ public class ReadingLogTest {
             indicies.add(3);
             a.addAll(ReadingGenerator.pickCard(shuffledDeck, indicies));
             Reading r = new Reading(a, u, s);
-            r.addCardMeanings(a, s);
+
             readingLog.addToLog(r);
             assert !readingLog.getReadings().isEmpty();
         } catch (Exception e) {
