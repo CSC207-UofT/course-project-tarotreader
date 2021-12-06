@@ -11,11 +11,10 @@ import java.io.ObjectOutputStream;
 
 public class UserManager {
 
-    public static void logReading(User user, Reading reading) {
-        ReadingLogger readingLogger = new ReadingLogger(user);
-        readingLogger.logReading(reading);
-    }
-
+    /**
+     * Updates user serialized file
+     * @param user Signed in user
+     */
     public static void updateUser(User user) {
         try {
             FileOutputStream outFile = new FileOutputStream(user.getUsername() + ".ser");

@@ -1,6 +1,5 @@
 import controllers.LoginController;
-import controllers.ReadingGeneratorController;
-import useCases.ReadingLogManager;
+import useCases.ReadingLogActions;
 
 import controllers.UserGeneratorController;
 
@@ -92,13 +91,13 @@ public class CommandLineInterface{
                     System.out.println("Would you like to log this reading? Type Y for yes and N for no:");
                     String log = account.nextLine();
                     if(Objects.equals(log, "Y")){
-                        UserManager.logReading(userLoggedIn, theReading);
+                        // UserManager.logReading(userLoggedIn, theReading); //TODO: Fix this
                         UserManager.updateUser(userLoggedIn);
                     }
                     System.out.println("Would you like to view your reading log? Type Y for yes and N for no:");
                     String viewLog = account.nextLine();
                     if(Objects.equals(viewLog, "Y")){
-                        System.out.println(ReadingLogManager.viewLog(userLoggedIn)); //This doesn't work
+                        System.out.println(ReadingLogActions.viewLog(userLoggedIn)); //This doesn't work
                         System.out.println(userLoggedIn.getReadingLog());
                     }
 

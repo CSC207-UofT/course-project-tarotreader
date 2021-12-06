@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ReadingLogManager {
+public class ReadingLogActions {
 
     // If the user does not have a reading log, returns null.
     public static ReadingLog viewLog(User user) {
