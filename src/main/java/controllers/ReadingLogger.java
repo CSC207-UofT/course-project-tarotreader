@@ -1,4 +1,4 @@
-package useCases;
+package controllers;
 
 import entities.User;
 import entities.Reading;

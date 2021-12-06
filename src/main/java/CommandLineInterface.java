@@ -1,6 +1,9 @@
 import controllers.LoginController;
-import controllers.ReadingLogManager;
+import controllers.ReadingGeneratorController;
+import useCases.ReadingLogManager;
+
 import controllers.UserGeneratorController;
+
 import controllers.UserManager;
 import entities.*;
 import useCases.*;
