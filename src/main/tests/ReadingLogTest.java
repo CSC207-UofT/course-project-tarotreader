@@ -14,7 +14,7 @@ public class ReadingLogTest {
     public void TestGetReadings() {
         try {
             User u = new User("eliferzincan", "Elif2001", 2001, 4, 30);
-            ReadingLog readingLog = new ReadingLog(u);
+            ReadingLog readingLog = new ReadingLog();
             assert readingLog.getReadings().isEmpty();
         } catch (Exception e) {
             e.printStackTrace();
@@ -24,7 +24,7 @@ public class ReadingLogTest {
     public void TestAddToLog() {
         try {
             User u = new User("eliferzincan", "Elif2001", 2001, 4, 30);
-            ReadingLog readingLog = new ReadingLog(u);
+            ReadingLog readingLog = new ReadingLog();
             ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(3);
             ArrayList<Card> a = new ArrayList<>();
             ArrayList<Integer> indicies = new ArrayList<>();

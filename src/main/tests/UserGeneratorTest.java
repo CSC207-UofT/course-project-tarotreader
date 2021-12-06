@@ -1,4 +1,3 @@
-import controllers.UserGeneratorController;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,18 +7,6 @@ import java.io.*;
 public class UserGeneratorTest {
     public UserGeneratorTest(){
 
-    }
-    private final PrintStream standardOut = System.out;
-    private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-    @Before
-    public void setUp(){
-        System.setOut(new PrintStream(outputStreamCaptor));
-    }
-    @Test
-    public void testGenerateExistingUser() {
-        UserGeneratorController.getInstance().generateUser("eliferzincan", "Password123", 2001, 4, 30);
-        Assert.assertEquals("Username already exists!", outputStreamCaptor.toString()
-                .trim());
     }
     @Test
     public void testValidBirthdateForInvalidYear(){
@@ -55,10 +42,6 @@ public class UserGeneratorTest {
     public void testValidBirthdateForMonthsWith30Days(){
         UserGenerator userGenerator = new UserGenerator();
         Assert.assertFalse(userGenerator.validBirthdate(2020, 11, 31));
-    }
-    @After
-    public void tearDown(){
-        System.setOut(standardOut);
     }
 }
 

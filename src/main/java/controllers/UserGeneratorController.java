@@ -58,7 +58,6 @@ public class UserGeneratorController {
             existingUser = (User) in.readObject();
             in.close();
             inputStream.close();
-
         }
         catch (FileNotFoundException ex){
             return false;

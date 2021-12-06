@@ -2,7 +2,6 @@ package controllers;
 import entities.Reading;
 import entities.ReadingLog;
 import entities.User;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,11 +30,10 @@ public class ReadingLogManager {
         }
         assert log != null;
         Map<String, Reading> readings = log.getReadings();
-        if (readings.containsKey(name)){
+        if (readings.containsKey(name)) {
             Reading selected = readings.get(reading.name);
             return selected.toString();
-        }
-        else{
+        } else {
             return "Reading does not exist";
         }
     }
@@ -53,13 +51,14 @@ public class ReadingLogManager {
         logs.put(user, user.getReadingLog());
     }
 
-    public static boolean remove_log(User user) {
+    public static boolean removeLog(User user) {
         if (logs.containsKey(user)) {
             logs.get(user).addToLog(reading);
             return true;
         }
         return false;
     }
-    }
+}
+
 
 
