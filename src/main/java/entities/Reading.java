@@ -13,7 +13,7 @@ public class Reading implements Serializable {
      * name: Name of the user.
      * spread: holds the Spread object chosen by the user. Spread affects the way that reading is printed for the user.
      */
-    private String readingName;
+    public String readingName;
     public ArrayList<String> reading;
     public String username;
     private String spreadName;

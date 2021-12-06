@@ -1,4 +1,5 @@
 import controllers.LoginController;
+import controllers.ReadingGeneratorController;
 import useCases.ReadingLogActions;
 
 import controllers.UserGeneratorController;
@@ -75,7 +76,7 @@ public class CommandLineInterface{
                     // Ask for number of times to shuffle
                     System.out.println("How many times do you want to shuffle?");
                     int shuffleCount = Integer.parseInt(account.nextLine());
-                    ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(shuffleCount);
+                    ArrayList<Card> shuffledDeck = ReadingGeneratorController.shuffler(shuffleCount);
                     // Allow user to select 3 cards
                     ArrayList<Integer> indicesChosen = new ArrayList<>();
                     System.out.println("There are " + cardList.size() + " cards");
@@ -83,11 +84,12 @@ public class CommandLineInterface{
                         System.out.println("Please select card #" + (i + 1) + ": ");
                         indicesChosen.add(Integer.parseInt(account.nextLine()));
                     }
+                    ArrayList<Card> pickedCards = ReadingGeneratorController.cardPicker(shuffledDeck, indicesChosen);
                     Spread spread = spreads.get(spreadNumChosen);
                     // Generate Reading
-                    Reading theReading = ReadingGenerator.generateReading(userLoggedIn, spread, shuffledDeck, indicesChosen);
+                    Reading theReading = ReadingGeneratorController.readingGenerator(userLoggedIn, spread, pickedCards);
                     // Present the Reading to the User
-                    System.out.println(theReading.toString());
+                    System.out.println(theReading);
                     System.out.println("Would you like to log this reading? Type Y for yes and N for no:");
                     String log = account.nextLine();
                     if(Objects.equals(log, "Y")){
