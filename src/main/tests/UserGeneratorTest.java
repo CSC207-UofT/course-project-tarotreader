@@ -50,5 +50,15 @@ public class UserGeneratorTest {
         UserGenerator userGenerator = new UserGenerator();
         Assert.assertFalse(userGenerator.validBirthdate(2020, 11, 31));
     }
+    @Test
+    public void testValidUsernameForInvalidUsername(){
+        UserGenerator userGenerator = new UserGenerator();
+        Assert.assertFalse(userGenerator.validUsername("e"));
+    }
+    @Test
+    public void testValidUsernameForValidUsername(){
+        UserGenerator userGenerator = new UserGenerator();
+        Assert.assertTrue(userGenerator.validUsername("eliferzincan"));
+    }
 }
 
