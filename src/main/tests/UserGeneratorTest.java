@@ -1,12 +1,19 @@
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import useCases.UserGenerator;
 import org.junit.Test;
-import java.io.*;
 public class UserGeneratorTest {
     public UserGeneratorTest(){
 
+    }
+    @Test
+    public void testValidPasswordForInvalidPassword(){
+        UserGenerator userGenerator = new UserGenerator();
+        assert(!userGenerator.validPassword("invalid:)"));
+    }
+    @Test
+    public void testValidPasswordForValidPassword(){
+        UserGenerator userGenerator = new UserGenerator();
+        assert(userGenerator.validPassword("Validpassword1"));
     }
     @Test
     public void testValidBirthdateForInvalidYear(){
