@@ -1,5 +1,9 @@
 import controllers.LoginController;
-import controllers.ReadingLogManager;
+import controllers.ReadingGeneratorController;
+import useCases.ReadingLogManager;
+
+import controllers.UserGeneratorController;
+
 import controllers.UserManager;
 import entities.*;
 import useCases.*;
@@ -42,7 +46,7 @@ public class CommandLineInterface{
                 int year = Integer.parseInt(yob);
 
                 // Generate a User
-                UserGenerator.generateUser(username, password, year, month, day);
+                UserGeneratorController.getInstance().generateUser(username, password, year, month, day);
                 System.out.println("User created. Redirecting to login...");
             }
             else if (entry == 1)
@@ -50,7 +54,7 @@ public class CommandLineInterface{
                 // Ask for Username
                 System.out.println("Enter username:");
                 String username = account.nextLine();
-                // Ask for Password
+                //Ask for Password
                 System.out.println("Enter password:");
                 String password = account.nextLine();
                 // Do Login

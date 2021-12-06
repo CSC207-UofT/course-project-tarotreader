@@ -12,7 +12,7 @@ public class User implements Serializable {
     public User(String username, String password, int year, int month, int day) {
         this.username = username;
         this.birthday = year + "/" + month + "/" + day;
-        this.readingLog = new ReadingLog(this);
+        this.readingLog = new ReadingLog();
         this.password = password;
     }
 
