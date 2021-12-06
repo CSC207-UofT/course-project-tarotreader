@@ -27,7 +27,7 @@ public class UserGeneratorTest {
     }
     @Test
     public void testGetExistingUserForNotExistingUser(){
-        assert UserGenerator.getExistingUser("hahadoesnotexist") == null;
+        Assert.assertNull(UserGenerator.getExistingUser("doesnotexist"));
     }
     @Test
     public void testGenerateUserForNotExistingUser(){
