@@ -18,7 +18,7 @@ public class DataReader {
         try {
             dataReader = new BufferedReader(new FileReader(fileName));
         } catch (FileNotFoundException e) {                  // Throws exception if file does not exist
-            e.printStackTrace();
+            throw new FileNotFoundException("File not found.");
         }
         String line ;
         while (true) {
@@ -29,4 +29,5 @@ public class DataReader {
         }
         return data;
     }
+
 }
