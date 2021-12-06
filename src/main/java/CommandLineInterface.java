@@ -50,7 +50,7 @@ public class CommandLineInterface{
                 // Ask for Username
                 System.out.println("Enter username:");
                 String username = account.nextLine();
-                // Ask for Password
+                //Ask for Password
                 System.out.println("Enter password:");
                 String password = account.nextLine();
                 // Do Login

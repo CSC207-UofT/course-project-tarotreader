@@ -24,7 +24,7 @@ public class DataReader {
         while (true) {
             assert dataReader != null;
             if ((line = dataReader.readLine()) == null) break;    // Reads until end of file
-            String[] elem = line.split(",");          // Uses comma as delimiter
+            String[] elem = line.split(";");          // Uses comma as delimiter
             data.add(elem);
         }
         return data;

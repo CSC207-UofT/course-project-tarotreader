@@ -47,6 +47,7 @@ public class ReadingGenerator {
         newReading.setReadingName(user.getUsername() + user.getReadingLog().getReadings().size());
         return newReading;
     }
+
     // Method that enables user to name the readings.
     public void nameReading(String name, Reading reading){
         reading.readingName = name;
