@@ -45,8 +45,9 @@ public class Reading implements Serializable {
 
     @Override
     public String toString(){
+
         StringBuilder myString = new StringBuilder();
-        String s = "Hey " + this.name + "! You have chosen the " + spreadName + ". Here is your reading for today...\n";
+        String s = this.readingName + "\nHey " + this.name + "! You have chosen the " + spreadName + ". Here is your reading for today...\n";
 
         switch (spreadName) {
             case "Past Present Future Reading": {

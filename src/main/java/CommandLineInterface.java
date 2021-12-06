@@ -1,6 +1,8 @@
 import controllers.LoginController;
-import controllers.ReadingLogManager;
+import useCases.ReadingLogManager;
+
 import controllers.UserGeneratorController;
+
 import controllers.UserManager;
 import entities.*;
 import useCases.*;
@@ -94,8 +96,8 @@ public class CommandLineInterface{
                     }
                     System.out.println("Would you like to view your reading log? Type Y for yes and N for no:");
                     String viewLog = account.nextLine();
-                    if(Objects.equals(viewLog, "Y")){
-                        System.out.println(ReadingLogManager.viewLog(userLoggedIn)); //This doesn't work
+                    if (Objects.equals(viewLog, "Y")){
+                        System.out.println(new ReadingLogManager().viewLog(userLoggedIn)); //This doesn't work
                         System.out.println(userLoggedIn.getReadingLog());
                     }
 

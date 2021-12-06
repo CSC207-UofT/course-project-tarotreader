@@ -17,6 +17,7 @@ public class ReadingLogger {
     //Adds the reading generated to the user's reading log.
     public void logReading(Reading reading) {
         //*
+
         // @param reading: The Reading object generated and to be added to the user's reading log.
         //
         Scanner name = new Scanner(System.in);  // Create a Scanner object
