@@ -28,6 +28,9 @@ public class UserGenerator {
         else if (!validPassword(password)) {
             System.out.println("Please select a password that is valid.");
         }
+        else if (!validBirthdate(year, month, day)){
+            System.out.println("Please enter a valid birthdate.");
+        }
         else{
             User user = new User(username, password, year, month, day); //Creates the User object
             //Tries to serialize the object in this try block
@@ -75,5 +78,20 @@ public class UserGenerator {
         Matcher m = p.matcher(password);
         return m.matches();
         }
-    }
+
+    public static boolean validBirthdate(int year, int month, int day) {
+        if ((year < 1900) | (year > 2021) | (month > 12) | (month < 1) | (day < 1) | (day > 31)) {
+            return false;
+        } else if (month == 2) {
+            if (year % 4 == 0) {
+                return day <= 29;
+            } else {
+                return day <= 28;
+            }
+        } else if ((month == 4) | (month == 6) | (month == 9) | (month == 11)) {
+            return day <= 30;
+    } return true;
+}
+}
+
 

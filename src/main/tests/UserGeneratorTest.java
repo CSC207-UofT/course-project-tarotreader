@@ -34,6 +34,34 @@ public class UserGeneratorTest {
         UserGenerator.generateUser("hahadoesnotexist", "password", 2001, 4, 30);
         assert UserGenerator.getExistingUser("hahadoesnotexist") != null;
     }
+    @Test
+    public void testValidBirthdateForInvalidYear(){
+        Assert.assertFalse(UserGenerator.validBirthdate(2111, 4, 30));
+    }
+    @Test
+    public void testValidBirthdateForInvalidMonth(){
+        Assert.assertFalse(UserGenerator.validBirthdate(2011, 13, 30));
+    }
+    @Test
+    public void testValidBirthdateForInvalidDate(){
+        Assert.assertFalse(UserGenerator.validBirthdate(2001, 4, 33));
+    }
+    @Test
+    public void testValidBirthdateForFebruary(){
+        Assert.assertFalse(UserGenerator.validBirthdate(2021, 2, 31));
+    }
+    @Test
+    public void testValidBirthdateForFebruary28(){
+        Assert.assertFalse(UserGenerator.validBirthdate(2021, 2, 29));
+    }
+    @Test
+    public void testValidBirthdateForFebruary29(){
+        Assert.assertFalse(UserGenerator.validBirthdate(2019, 2, 29));
+    }
+    @Test
+    public void testValidBirthdateForMonthsWith30Days(){
+        Assert.assertFalse(UserGenerator.validBirthdate(2020, 11, 31));
+    }
     @After
     public void tearDown(){
         System.setOut(standardOut);
