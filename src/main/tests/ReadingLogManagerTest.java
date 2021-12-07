@@ -1,7 +1,6 @@
-import controllers.ReadingLogManager;
+import useCases.ReadingLogActions;
 import entities.*;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import useCases.ReadingGenerator;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ public class ReadingLogManagerTest {
     public void viewLogTest(){
         User user = new User("test", "test123", 1999, 1, 1);
         ReadingLog log1 = user.getReadingLog();
-        ReadingLog log2 = ReadingLogManager.viewLog(user);
+        ReadingLog log2 = new ReadingLogActions().viewLog(user);
         assert(Objects.equals(log1, log2));
     }
 
@@ -20,15 +19,16 @@ public class ReadingLogManagerTest {
     public void viewLReadingTest() throws Spread.WrongSpreadType {
         User user = new User("test", "test123", 1999, 1, 1);
         ArrayList<Card> deck = ReadingGenerator.shuffleDeck(3);
-        ArrayList<Integer> index = new ArrayList<Integer>();
+        ArrayList<Integer> index = new ArrayList<>();
         index.add(5);
         index.add(20);
         index.add(43);
         Spread spread = new Spread("General", "3");
-        Reading reading = ReadingGenerator.generateReading(user, spread, deck, index);
+        ArrayList<Card> pickedCards = ReadingGenerator.pickCard(deck, index);
+        Reading reading = ReadingGenerator.generateReading(user, spread, pickedCards);
         reading.readingName = "test";
         String reading1 = reading.toString();
-        String reading2 = ReadingLogManager.viewReading(user, "test");
+        String reading2 = new ReadingLogActions().viewReading(user, "test");
         assert(Objects.equals(reading1, reading2));
     }
 }

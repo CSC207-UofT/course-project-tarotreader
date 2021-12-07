@@ -1,5 +1,9 @@
 import controllers.LoginController;
-import controllers.ReadingLogManager;
+import controllers.ReadingGeneratorController;
+import useCases.ReadingLogActions;
+
+import controllers.UserGeneratorController;
+
 import controllers.UserManager;
 import entities.*;
 import useCases.*;
@@ -42,7 +46,7 @@ public class CommandLineInterface{
                 int year = Integer.parseInt(yob);
 
                 // Generate a User
-                UserGenerator.generateUser(username, password, year, month, day);
+                UserGeneratorController.getInstance().generateUser(username, password, year, month, day);
                 System.out.println("User created. Redirecting to login...");
             }
             else if (entry == 1)
@@ -72,7 +76,7 @@ public class CommandLineInterface{
                     // Ask for number of times to shuffle
                     System.out.println("How many times do you want to shuffle?");
                     int shuffleCount = Integer.parseInt(account.nextLine());
-                    ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(shuffleCount);
+                    ArrayList<Card> shuffledDeck = ReadingGeneratorController.shuffler(shuffleCount);
                     // Allow user to select 3 cards
                     ArrayList<Integer> indicesChosen = new ArrayList<>();
                     System.out.println("There are " + cardList.size() + " cards");
@@ -80,21 +84,22 @@ public class CommandLineInterface{
                         System.out.println("Please select card #" + (i + 1) + ": ");
                         indicesChosen.add(Integer.parseInt(account.nextLine()));
                     }
+                    ArrayList<Card> pickedCards = ReadingGeneratorController.cardPicker(shuffledDeck, indicesChosen);
                     Spread spread = spreads.get(spreadNumChosen);
                     // Generate Reading
-                    Reading theReading = ReadingGenerator.generateReading(userLoggedIn, spread, shuffledDeck, indicesChosen);
+                    Reading theReading = ReadingGeneratorController.readingGenerator(userLoggedIn, spread, pickedCards);
                     // Present the Reading to the User
-                    System.out.println(theReading.toString());
+                    System.out.println(theReading);
                     System.out.println("Would you like to log this reading? Type Y for yes and N for no:");
                     String log = account.nextLine();
                     if(Objects.equals(log, "Y")){
-                        UserManager.logReading(userLoggedIn, theReading);
+                        // UserManager.logReading(userLoggedIn, theReading); //TODO: Fix this
                         UserManager.updateUser(userLoggedIn);
                     }
                     System.out.println("Would you like to view your reading log? Type Y for yes and N for no:");
                     String viewLog = account.nextLine();
-                    if(Objects.equals(viewLog, "Y")){
-                        System.out.println(ReadingLogManager.viewLog(userLoggedIn)); //This doesn't work
+                    if (Objects.equals(viewLog, "Y")){
+                        System.out.println(new ReadingLogActions().viewLog(userLoggedIn)); //This doesn't work
                         System.out.println(userLoggedIn.getReadingLog());
                     }
 

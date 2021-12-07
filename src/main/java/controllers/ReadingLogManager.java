@@ -1,65 +1,30 @@
 package controllers;
+
+import entities.User;
 import entities.Reading;
 import entities.ReadingLog;
-import entities.User;
+import useCases.ReadingLogActions;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import java.util.Scanner;
 
 public class ReadingLogManager {
-    private static final Map<User, ReadingLog> logs = new HashMap<>();
-    private static Reading reading;
 
-    // If the user does not have a reading log, returns null.
-    public static ReadingLog viewLog(User user) {
-        ReadingLog log = null;
-        if (logs.containsKey(user)) {
-            log = logs.get(user);
-        }
-        //*assert log != null;
-        //*if (log.readings.containsKey(readingName)) {
-        //    reading = log.readings.get(readingName);
-        //}
-        return log;
+    private User loggedInUser;
+
+    //Creates a ReadingLogManager object with the logged in User.
+    public ReadingLogManager(User loggedInUser) {
+        this.loggedInUser = loggedInUser;
     }
 
-    public static String viewReading(User user, String name) {
-        ReadingLog log = null;
-        if (logs.containsKey(user)) {
-            log = logs.get(user);
-        }
-        assert log != null;
-        Map<String, Reading> readings = log.getReadings();
-        if (readings.containsKey(name)){
-            Reading selected = readings.get(reading.name);
-            return selected.toString();
-        }
-        else{
-            return "Reading does not exist";
-        }
-    }
+    //Adds the reading generated to the user's reading log.
+    public void logReading(Reading reading, String readingName) {
+        //*
 
-    // Returns true if the reading is successfully added to the log, false otherwise.
-    public static boolean logReading(User user, Reading reading) {
-        if (logs.containsKey(user)) {
-            logs.get(user).addToLog(reading);
-            return true;
-        }
-        return false;
+        // @param reading: The Reading object generated and to be added to the user's reading log.
+        //
+        ReadingLogActions actions = new ReadingLogActions();
+        actions.nameReading(loggedInUser, reading.getReadingName(), readingName);
+        ReadingLog readingLog = loggedInUser.getReadingLog();
+        readingLog.addToLog(reading);
     }
-
-    public static void addLog(User user) {
-        logs.put(user, user.getReadingLog());
-    }
-
-    public static boolean remove_log(User user) {
-        if (logs.containsKey(user)) {
-            logs.get(user).addToLog(reading);
-            return true;
-        }
-        return false;
-    }
-    }
-
-
+}

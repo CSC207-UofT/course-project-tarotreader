@@ -1,15 +1,10 @@
 import entities.Spread;
 import org.junit.Test;
-import useCases.SpreadInit;
-
 import static org.junit.Assert.*;
-import java.io.IOException;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.ArrayList;
 
 public class SpreadTest {
-
-    public SpreadTest() throws IOException {
-    }
 
     @Test
     public void TestSpreadContents() {
@@ -20,6 +15,40 @@ public class SpreadTest {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    @Test
+    public void TestGetSpreadName(){
+        try{
+            ArrayList<Spread> spreadList = Spread.getSpreadList();
+            String expectedName = "General Reading";
+            String actualName = spreadList.get(0).getSpreadName();
+            assertEquals(expectedName, actualName);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void TestGetRequiredMeaningType() throws Spread.WrongSpreadType {
+        Spread genSpread = new Spread("General Reading", "3");
+        String expectedMeaningType = "General";
+        String actualMeaningType = genSpread.getRequiredMeaningType();
+        assertEquals(expectedMeaningType, actualMeaningType);
+    }
+
+    @Test
+    public void TestGetRequiredMeaningTypeWrongSpreadName() throws Spread.WrongSpreadType {
+        Spread.WrongSpreadType thrown = assertThrows(Spread.WrongSpreadType.class, () -> new Spread("wrongSpread", "3").getRequiredMeaningType(), "Spread type does not exist. Please try again");
+        assertTrue(thrown.getMessage().contains("Spread type does not exist. Please try again"));
+    }
+
+    @Test
+    public void TestGetNumCards() throws Spread.WrongSpreadType {
+        Spread genSpread = new Spread("General Reading", "3");
+        Integer expected = 3;
+        Integer actual = genSpread.getNumCards();
+        assertEquals(expected, actual);
+
     }
 }
 
