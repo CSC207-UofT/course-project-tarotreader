@@ -50,8 +50,12 @@ public class ReadingLogActions {
         }
     }
 
-    public void nameReading(User user, String readingName, String newReadingName) {
-        user.getReadingLog().getReadings().get(readingName).setReadingName(newReadingName);
+    public boolean nameReading(User user, String readingName, String newReadingName) {
+        if (user.getReadingLog().getReadings().containsKey(readingName)) {
+            user.getReadingLog().getReadings().get(readingName).setReadingName(newReadingName);
+            return true;
+        }
+        return false;
     }
 }
 
