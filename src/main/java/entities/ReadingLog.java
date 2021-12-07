@@ -18,7 +18,7 @@ public class ReadingLog implements Serializable {
     }
 
     public void addToLog(Reading reading) {
-        readings.put(reading.readingName, reading);
+        readings.put(reading.getReadingName(), reading);
     }
 
     @Override
