@@ -1,4 +1,6 @@
+
 import controllers.*;
+
 import useCases.ReadingLogActions;
 
 import entities.*;
@@ -68,6 +70,7 @@ public class CommandLineInterface{
                     }
                     if (in.equals(LIST_CARDS)) {
                         listCards();
+
                     }
                     if (in.equals(CARD_LOOKUP)) {
                         System.out.println("Please enter a keyword");

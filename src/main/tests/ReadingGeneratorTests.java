@@ -31,7 +31,8 @@ public class ReadingGeneratorTests {
         pickedIndex.add(1);
         pickedIndex.add(3);
         pickedIndex.add(5);
-        Reading thisReading = ReadingGenerator.generateReading(thisUser, spreadList.get(0), shuffledDeck, pickedIndex);
+        ArrayList<Card> pickedCards = ReadingGenerator.pickCard(shuffledDeck, pickedIndex);
+        Reading thisReading = ReadingGenerator.generateReading(thisUser, spreadList.get(0), pickedCards);
         assertNotEquals(null, thisReading);
         assert(thisReading.toString().contains("General Reading"));
     }
