@@ -16,7 +16,7 @@ public class TarotCardImage extends JPanel {
             image = ImageIO.read(new File(imagePath+ cardName + ".png"));
         }
         catch (IOException ex) {
-            ex.printStackTrace();
+            System.out.println("There was issue loading one or more card images. Sorry about that :(");
         }
     }
 
