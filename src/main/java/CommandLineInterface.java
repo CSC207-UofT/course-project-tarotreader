@@ -23,6 +23,7 @@ public class CommandLineInterface{
     private static final String HELP = "help";
     private static final String CARD_LOOKUP = "s";
     private static final String NEW_READING = "nr";
+    private static final String SHOW_LOG = "sl";
 
     public static void main(String[] args) {
         //Will continue to loop until user presses "q"
@@ -79,6 +80,9 @@ public class CommandLineInterface{
                         CardLookupController cardLookupController = new CardLookupController();
                         System.out.println(cardLookupController.searchCard(query));
                     }
+                    if (in.equals(SHOW_LOG)) {
+                        showLogAndActions(scanner, userLoggedIn);
+                    }
                     if (in.equals(HELP)) {
                         help();
                     }
@@ -91,6 +95,34 @@ public class CommandLineInterface{
 
         }
 
+    }
+
+    private static void showLogAndActions(Scanner scanner, User userLoggedIn) {
+        ReadingLogManager manager = new ReadingLogManager(userLoggedIn);
+        System.out.println(manager.viewReadingLog());
+        System.out.println("Would you like to perform an action on a reading?");
+        System.out.println("Actions available are: ");
+        System.out.println("cl: clears log");
+        System.out.println("dr: deletes reading");
+        System.out.println("rn: renames a reading");
+        var action = scanner.nextLine();
+        if (action.equals("cl")) manager.clearLog();
+        if (action.equals("dr")) {
+            System.out.println("Enter reading name to delete");
+            var readingName = scanner.nextLine();
+            var deleted = manager.deleteReading(readingName);
+            var printString = deleted ? "Reading deleted" : "No reading with this name found";
+            System.out.println(printString);
+        }
+        if (action.equals("rn")) {
+            System.out.println("Please enter the name of the reading you want to rename");
+            var oldName = scanner.nextLine();
+            System.out.println("Please enter the new name for this reading");
+            var newName = scanner.nextLine();
+            var renamed = manager.renameReading(oldName, newName);
+            var printString = renamed ?  oldName + " renamed to " + newName : "No such reading found";
+            System.out.println(printString);
+        }
     }
 
     private static void listCards() {
@@ -242,7 +274,7 @@ public class CommandLineInterface{
 
     private static void help() {
         System.out.println("Here is the list of commands: \n q: quits the program\n ls: lists all cards\n" +
-                "s: lookup cards with a keyword search\n nr: creates new reading");
+                "s: lookup cards with a keyword search\n nr: creates new reading\n sl: shows reading log");
     }
 
 }
