@@ -11,6 +11,7 @@ public class TarotFrame extends JFrame {
     private JPanel cardsPanel;
     private JTextArea readingArea;
     private GridLayout layout;
+    private JButton menu;
 
     public TarotFrame(ArrayList<Card> cards, String reading) {
         super();
@@ -21,6 +22,7 @@ public class TarotFrame extends JFrame {
         setVisible(true);
         readingArea = new JTextArea(reading);
         cardsPanel = new JPanel();
+        menu = new JButton();
         layout = new GridLayout(1, cards.size());
         cardsPanel.setLayout(layout);
         BorderLayout borderLayout = new BorderLayout();
@@ -31,6 +33,8 @@ public class TarotFrame extends JFrame {
         add(cardsPanel, BorderLayout.CENTER);
         setVisible(true);
         add(readingArea, BorderLayout.SOUTH);
+        setVisible(true);
+        add(menu, BorderLayout.EAST);
         setVisible(true);
     }
 }
