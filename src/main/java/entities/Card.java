@@ -96,11 +96,11 @@ public class Card{
         if(this.isMajor){
             return getName() + " " + majorOrMinor + "\n" + "General Meaning: " +
                     getMeaning("General") + "\n" + "Love Meaning: " + getMeaning("Love") + "\n" +
-                    "Career Meaning: " + getMeaning("Career");
+                    "Career Meaning: " + getMeaning("Career") + "\n";
         }else{
             return getName() + " " + majorOrMinor + "\n" + suit + "\n" + "General Meaning: " +
                     getMeaning("General") + "\n" + "Love Meaning: " + getMeaning("Love") + "\n" +
-                    "Career Meaning: " + getMeaning("Career");
+                    "Career Meaning: " + getMeaning("Career") + "\n";
         }
     }
 }

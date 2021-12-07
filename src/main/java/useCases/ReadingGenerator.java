@@ -40,9 +40,9 @@ public class ReadingGenerator {
     the user.
      */
 
-    public static Reading generateReading(User user, Spread spread, ArrayList<Card> shuffledDeck, ArrayList<Integer> indexOfCards){
+    public static Reading generateReading(User user, Spread spread, ArrayList<Card> pickedCards){
         //ArrayList<Card> shuffledDeck = shuffleDeck(shuffle);
-        ArrayList<Card> pickedCards = pickCard(shuffledDeck, indexOfCards);
+        //ArrayList<Card> pickedCards = pickCard(shuffledDeck, indexOfCards);
         var newReading = new Reading(pickedCards, user, spread);
         newReading.setReadingName(user.getUsername() + user.getReadingLog().getReadings().size());
         return newReading;
@@ -50,7 +50,7 @@ public class ReadingGenerator {
 
     // Method that enables user to name the readings.
     public void nameReading(String name, Reading reading){
-        reading.readingName = name;
+        reading.setReadingName(name);
     }
 }
 

@@ -1,4 +1,5 @@
 import controllers.LoginController;
+import controllers.UserGeneratorController;
 import entities.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -20,8 +21,9 @@ public class ReadingGeneratorTests {
 
     @Test
     public void GenerateReadingTest() throws Exception {
-        UserGenerator.generateUser("test", "test123", 1999, 1, 1);
-        User thisUser = (User) LoginController.getInstance().login("test", "test123");
+
+        UserGeneratorController.getInstance().generateUser("test", "TestTest123", 1999, 1, 1);
+        User thisUser = (User) LoginController.getInstance().login("test", "TestTest123");
         ArrayList<Integer> pickedIndex = new ArrayList<>();
         ArrayList<Spread> spreadList = SpreadInit.getSpreads();
         ArrayList<Card> shuffledDeck = ReadingGenerator.shuffleDeck(3);
@@ -29,7 +31,8 @@ public class ReadingGeneratorTests {
         pickedIndex.add(1);
         pickedIndex.add(3);
         pickedIndex.add(5);
-        Reading thisReading = ReadingGenerator.generateReading(thisUser, spreadList.get(0), shuffledDeck, pickedIndex);
+        ArrayList<Card> pickedCards = ReadingGenerator.pickCard(shuffledDeck, pickedIndex);
+        Reading thisReading = ReadingGenerator.generateReading(thisUser, spreadList.get(0), pickedCards);
         assertNotEquals(null, thisReading);
         assert(thisReading.toString().contains("General Reading"));
     }
