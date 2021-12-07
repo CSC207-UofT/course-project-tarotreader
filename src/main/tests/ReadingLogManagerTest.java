@@ -24,8 +24,12 @@ public class ReadingLogManagerTest {
         index.add(20);
         index.add(43);
         Spread spread = new Spread("General", "3");
+        ArrayList<Card> pickedCards = new ArrayList<>();
+        pickedCards.add(deck.get(index.get(0)));
+        pickedCards.add(deck.get(index.get(1)));
+        pickedCards.add(deck.get(index.get(2)));
 
-        Reading reading = ReadingGenerator.generateReading(user, spread, deck, index);
+        Reading reading = ReadingGenerator.generateReading(user, spread, pickedCards);
         reading.setReadingName("test");
 
         String reading1 = reading.toString();

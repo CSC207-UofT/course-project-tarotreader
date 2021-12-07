@@ -13,7 +13,6 @@ public class TarotCardImage extends JPanel {
     public TarotCardImage(String cardName) {
         String imagePath= "resources/images/";
         try {
-            System.out.println(imagePath+ cardName + ".png");
             image = ImageIO.read(new File(imagePath+ cardName + ".png"));
         }
         catch (IOException ex) {

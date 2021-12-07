@@ -5,6 +5,7 @@ import useCases.ReadingLogActions;
 
 import entities.*;
 import useCases.*;
+import presenters.TarotFrame;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -134,7 +135,13 @@ public class CommandLineInterface{
     private static Reading getGeneratedReading(User userLoggedIn, ArrayList<Spread> spreads, int spreadNumChosen, ArrayList<Card> shuffledDeck, ArrayList<Integer> indicesChosen) {
         Spread spread = spreads.get(spreadNumChosen);
         // Generate Reading
-        return ReadingGenerator.generateReading(userLoggedIn, spread, shuffledDeck, indicesChosen); //Do this using reading generator controller
+        ArrayList<Card> pickedCards = new ArrayList<>();
+        pickedCards.add(shuffledDeck.get(indicesChosen.get(0)));
+        pickedCards.add(shuffledDeck.get(indicesChosen.get(1)));
+        pickedCards.add(shuffledDeck.get(indicesChosen.get(2)));
+        Reading reading = ReadingGeneratorController.readingGenerator(userLoggedIn, spread, pickedCards); //Do this using reading generator controller
+        TarotFrame frame = new TarotFrame(pickedCards, reading.toString());
+        return reading;
     }
 
     private static ArrayList<Integer> pickCardIndices(ArrayList<Card> cardList, Scanner account) {
