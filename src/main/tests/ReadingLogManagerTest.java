@@ -25,7 +25,7 @@ public class ReadingLogManagerTest {
         index.add(43);
         Spread spread = new Spread("General", "3");
         Reading reading = ReadingGenerator.generateReading(user, spread, deck, index);
-        reading.readingName = "test";
+        reading.setReadingName("test");
         String reading1 = reading.toString();
         String reading2 = new ReadingLogActions().viewReading(user, "test");
         assert(Objects.equals(reading1, reading2));
