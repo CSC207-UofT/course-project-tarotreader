@@ -16,19 +16,21 @@ public class TarotFrame extends JFrame {
         super();
         setName("Tarot Reader 3000");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 500);
+        setSize(700, 400);
         setLocationRelativeTo(null);
         setVisible(true);
-
         readingArea = new JTextArea(reading);
         cardsPanel = new JPanel();
         layout = new GridLayout(1, cards.size());
         cardsPanel.setLayout(layout);
+        BorderLayout borderLayout = new BorderLayout();
+        setLayout(borderLayout);
         for (Card card : cards) {
             cardsPanel.add(new TarotCardImage(card.getName()));
         }
-        add(cardsPanel);
-        add(readingArea);
-
+        add(cardsPanel, BorderLayout.CENTER);
+        setVisible(true);
+        add(readingArea, BorderLayout.SOUTH);
+        setVisible(true);
     }
 }
