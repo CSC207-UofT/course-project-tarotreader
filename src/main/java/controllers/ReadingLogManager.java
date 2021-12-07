@@ -23,8 +23,13 @@ public class ReadingLogManager {
         // @param reading: The Reading object generated and to be added to the user's reading log.
         //
         ReadingLogActions actions = new ReadingLogActions();
-        actions.nameReading(loggedInUser, reading.getReadingName(), readingName);
         ReadingLog readingLog = loggedInUser.getReadingLog();
         readingLog.addToLog(reading);
+        actions.logReading(loggedInUser, reading);
+        actions.nameReading(loggedInUser, reading.getReadingName(), readingName);
+    }
+
+    public String viewReadingLog() {
+        return loggedInUser.getReadingLog().toString();
     }
 }
