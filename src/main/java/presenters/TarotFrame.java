@@ -16,7 +16,7 @@ public class TarotFrame extends JFrame {
         super();
         setName("Tarot Reader 3000");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(700, 400);
+        setSize(700, 500);
         setLocationRelativeTo(null);
         setVisible(true);
         readingArea = new JTextArea(reading);
