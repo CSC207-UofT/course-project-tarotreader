@@ -19,6 +19,13 @@ public class LoginControllerTest {
         Object loggedIn = LoginController.getInstance().login(user, password);
         assertFalse((Boolean) loggedIn);
         assertNotEquals(true, loggedIn);
+    }
 
+    @Test public void testLoginSuccess()
+    {
+        String user = "Bahati";
+        String password = "Damien";
+        Object loggedIn = LoginController.getInstance().login(user, password);
+        assertTrue((Boolean) loggedIn);
     }
 }

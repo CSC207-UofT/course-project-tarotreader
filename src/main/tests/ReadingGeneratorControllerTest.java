@@ -16,13 +16,13 @@ public class ReadingGeneratorControllerTest {
         Object secondInstance = ReadingGeneratorController.getInstance();
         assertEquals(firstInstance, secondInstance);
     }
-    @Test
-    public void testReadingGeneratorController() throws Exception {
-        Constructor constructor = ReadingGeneratorController.class.getDeclaredConstructor();
-        assertTrue("Constructor is not private", Modifier.isPrivate(constructor.getModifiers()));
 
-        constructor.setAccessible(true);
-        constructor.newInstance();
+    @Test()
+    public void testReadingGeneratorControllerIsPrivate() {
+        final Constructor<?>[] constructors = ReadingGeneratorController.class.getDeclaredConstructors();
+        for (Constructor<?> constructor : constructors) {
+            assertTrue(Modifier.isPrivate(constructor.getModifiers()));
+        }
     }
 
     @Test
@@ -41,11 +41,33 @@ public class ReadingGeneratorControllerTest {
         ArrayList<Integer> pickIndices = new ArrayList<>();
         pickIndices.add(0);
         pickIndices.add(1);
+        ArrayList<Integer> pickIndices2 = new ArrayList<>();
+        pickIndices.add(2);
+        pickIndices.add(3);
 
         ArrayList<Card> testPickCards = ReadingGeneratorController.cardPicker(shuffledDeck, pickIndices);
-        ArrayList<Card> secondTestPickCards = ReadingGeneratorController.cardPicker(shuffledDeck, pickIndices);
+        ArrayList<Card> secondTestPickCards = ReadingGeneratorController.cardPicker(shuffledDeck, pickIndices2);
 
-        assertEquals(secondTestPickCards, testPickCards);
+        assertNotEquals(secondTestPickCards, testPickCards);
+    }
+
+    @Test
+    public void TestCardPickerCorrectness()
+    {
+        Card newCard = new Card("testName", "2", "true", "generalMeaning",
+                "generalMeaningRev", "loveMeaning", "loveMeaningRev",
+                "careerMeaning", "careerMeaningRev");
+        ArrayList<Card> shuffleDeck = new ArrayList<Card>();
+        shuffleDeck.add(newCard);
+
+        ArrayList<Integer> pickIndices = new ArrayList<>();
+        pickIndices.add(0);
+
+        ArrayList<Card> actualCardsReturned = ReadingGeneratorController.cardPicker(shuffleDeck, pickIndices);
+        ArrayList<Card> expectedCardsReturned = new ArrayList<Card>();
+        expectedCardsReturned.add(newCard);
+
+        assertEquals(actualCardsReturned, expectedCardsReturned);
     }
 
     @Test
