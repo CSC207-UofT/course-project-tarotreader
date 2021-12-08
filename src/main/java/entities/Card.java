@@ -94,13 +94,15 @@ public class Card{
         //Ternary operator to determine whether the header should write Major or Minor based on the value of isMajor
         String majorOrMinor = isMajor ? "(Major)" : "(Minor)";
         if(this.isMajor){
-            return getName() + " " + majorOrMinor + "\n" + "General Meaning: " +
-                    getMeaning("General") + "\n" + "Love Meaning: " + getMeaning("Love") + "\n" +
-                    "Career Meaning: " + getMeaning("Career") + "\n";
+            return getName() + " " + majorOrMinor + "\n" + "General Meaning: " + this.generalMeaning + "\n" +
+                    "General Meaning Reversed: " + this.generalMeaningRev + "\nLove Meaning: " + this.loveMeaning +
+                    "\nLove Meaning Reversed: " + this.loveMeaningRev + "\nCareer Meaning: " + this.careerMeaning +
+                    "\nCareer Meaning Reversed: " + this.careerMeaningRev + "\n";
         }else{
-            return getName() + " " + majorOrMinor + "\n" + suit + "\n" + "General Meaning: " +
-                    getMeaning("General") + "\n" + "Love Meaning: " + getMeaning("Love") + "\n" +
-                    "Career Meaning: " + getMeaning("Career") + "\n";
+            return getName() + " " + majorOrMinor + " Suit: " + this.suit + "\nGeneral Meaning: " + this.generalMeaning + "\n" +
+                    "General Meaning Reversed: " + this.generalMeaningRev + "\nLove Meaning: " + this.loveMeaning +
+                    "\nLove Meaning Reversed: " + this.loveMeaningRev + "\nCareer Meaning: " + this.careerMeaning +
+                    "\nCareer Meaning Reversed: " + this.careerMeaningRev + "\n";
         }
     }
 }
