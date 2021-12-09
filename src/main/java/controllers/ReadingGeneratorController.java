@@ -9,6 +9,9 @@ import useCases.ReadingGenerator;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+/**
+ * TODO: Add add the java doc description to this class
+ */
 public class ReadingGeneratorController {
     private static final ReadingGeneratorController controllerInstance = new ReadingGeneratorController();
     private ReadingGeneratorController(){
