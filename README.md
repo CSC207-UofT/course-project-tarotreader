@@ -10,5 +10,5 @@ This app will allow users to create an account, generate readings and interpreta
 up references for card meanings, allow users to log software-generated readings, allow users to log readings they have 
 done themselves, delete readings from the log, and allow users to see reading log associated with their account.
 
-
+Design Document: https://docs.google.com/document/d/1BPug_tqjSWdhoxqpHabxxffTw0rZC4Ce9UHIozNLwyI/edit?usp=sharing
 
