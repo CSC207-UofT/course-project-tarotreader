@@ -9,6 +9,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Random;
 import useCases.UserGenerator;
 
+import static org.junit.Assert.assertEquals;
+
 public class UserGeneratorControllerTest {
     public UserGeneratorControllerTest(){
     }
@@ -40,7 +42,7 @@ public class UserGeneratorControllerTest {
                 4, 30);
         UserGeneratorController.getInstance().generateUser(generatedString, "Password123", 2001,
                 4, 30);
-        Assert.assertEquals("Username already exists!", outputStreamCaptor.toString()
+        assertEquals("Username already exists!", outputStreamCaptor.toString()
                 .trim());
     }
     @Test
@@ -55,7 +57,7 @@ public class UserGeneratorControllerTest {
     public void testGenerateUserInvalidPassword() {
         UserGeneratorController.getInstance().generateUser("userforpasswordtrial", "invalid",
                 2001, 4, 30);
-        Assert.assertEquals("Please select a password that is valid. A valid password has at least one" +
+        assertEquals("Please select a password that is valid. A valid password has at least one" +
                 "lowercase and one uppercase character, and a digit.", outputStreamCaptor.toString()
                 .trim());
     }
@@ -63,14 +65,14 @@ public class UserGeneratorControllerTest {
     public void testGenerateUserInvalidBirthdate() {
         UserGeneratorController.getInstance().generateUser("userforbirthdatetrial", "Password123",
                 2101, 4, 30);
-        Assert.assertEquals("Please enter a valid birthdate.", outputStreamCaptor.toString()
+        assertEquals("Please enter a valid birthdate.", outputStreamCaptor.toString()
                 .trim());
     }
     @Test
     public void testGenerateUserForInvalidUsername(){
         UserGeneratorController.getInstance().generateUser("a", "Password1", 2001, 4,
                 30);
-        Assert.assertEquals("Please enter a username that has more than 5 characters.",
+        assertEquals("Please enter a username that has more than 5 characters.",
                 outputStreamCaptor.toString().trim());
     }
     @After

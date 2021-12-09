@@ -131,16 +131,20 @@ public class CommandLineInterface{
     }
 
     private static void newReading(Scanner scanner, User userLoggedIn, ArrayList<Card> cardList, ArrayList<Spread> spreads) {
-        int spreadNumChosen = getSpreadNumChosen(spreads, scanner);
-        // Ask for number of times to shuffle
-        ArrayList<Card> shuffledDeck = getShuffledDeck(scanner);
-        // Allow user to select 3 cards
-        ArrayList<Integer> indicesChosen = pickCardIndices(cardList, scanner);
-        Reading theReading = getGeneratedReading(userLoggedIn, spreads, spreadNumChosen, shuffledDeck, indicesChosen);
-        // Present the Reading to the User
-        System.out.println(theReading.toString());
-        logReadingToReadingLog(userLoggedIn, theReading, scanner);
-        viewReadingLog(userLoggedIn, scanner);
+        try{
+            int spreadNumChosen = getSpreadNumChosen(spreads, scanner);
+            // Ask for number of times to shuffle
+            ArrayList<Card> shuffledDeck = getShuffledDeck(scanner);
+            // Allow user to select 3 cards
+            ArrayList<Integer> indicesChosen = pickCardIndices(cardList, scanner);
+            Reading theReading = getGeneratedReading(userLoggedIn, spreads, spreadNumChosen, shuffledDeck, indicesChosen);
+            // Present the Reading to the User
+            System.out.println(theReading.toString());
+            logReadingToReadingLog(userLoggedIn, theReading, scanner);
+            viewReadingLog(userLoggedIn, scanner);
+        }catch(IndexOutOfBoundsException indexOutOfBoundsEx){
+            System.out.println("Please try again and choose a valid number.");
+        }
     }
 
     private static void viewReadingLog(User userLoggedIn, Scanner account) {
