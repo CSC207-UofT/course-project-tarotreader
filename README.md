@@ -6,9 +6,15 @@ a regular playing deck, they are split up into 4 “suits”, pentacles, swords,
 Ace card, cards numbered 2 to 10, and a page, queen, and king card. Each card has a meaning associated with it, and 
 when cards are put together, meanings change, which can be interpreted as a fortune.
 
-This app will allow users to create an account, generate readings and interpretations with user-selected spread, look 
-up references for card meanings, allow users to log software-generated readings, allow users to log readings they have 
-done themselves, delete readings from the log, and allow users to see reading log associated with their account.
+This app will allow users to create an account, generate readings and interpretations with user-selected spread, look up references for card meanings, allow users to log software-generated readings, delete readings from the log, and allow users to see reading log associated with their account.
+
+Type "help" for a list of commands. Commands include:
+- q: quits the program
+- ls: lists all tarot cards
+- s: lookup cards with keyword search and get all their card information
+- nr: creates a new reading
+- sl: shows the users reading log
 
 Design Document: https://docs.google.com/document/d/1BPug_tqjSWdhoxqpHabxxffTw0rZC4Ce9UHIozNLwyI/edit?usp=sharing
 
+Credits for Card Meanings: https://labyrinthos.co/
