@@ -1,5 +1,9 @@
 import controllers.LoginController;
+import controllers.UserGeneratorController;
+import entities.User;
 import org.junit.Test;
+
+import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,20 +16,17 @@ public class LoginControllerTest {
         assertEquals(firstInstance, secondInstance);
     }
 
-    @Test
-    public void testLogin() {
-        String user = "firstUser";
-        String password = "myPassword";
-        Object loggedIn = LoginController.getInstance().login(user, password);
-        assertFalse((Boolean) loggedIn);
-        assertNotEquals(true, loggedIn);
-    }
 
     @Test public void testLoginSuccess()
     {
+        File temporary = new File("Bahati.ser");
+        if (!temporary.exists()) {
+            UserGeneratorController.getInstance().generateUser("Bahati", "Damien12",
+                    2001, 1, 1);
+        }
         String user = "Bahati";
-        String password = "Damien";
+        String password = "Damien12";
         Object loggedIn = LoginController.getInstance().login(user, password);
-        assertTrue((Boolean) loggedIn);
+        assertTrue(loggedIn instanceof User);
     }
 }

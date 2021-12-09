@@ -19,12 +19,6 @@ public class UserGeneratorControllerTest {
         System.setOut(new PrintStream(outputStreamCaptor));
     }
     @Test
-    public void testUserExistsForExistingUser(){
-        UserGenerator userGenerator = new UserGenerator();
-        userGenerator.generateUser("eliferzincan", "Password123", 2001, 4, 30);
-        assert UserGeneratorController.userExists("eliferzincan");
-    }
-    @Test
     public void testUserExistsForNotExistingUser(){
         byte[] array = new byte[7];
         new Random().nextBytes(array);
