@@ -34,7 +34,11 @@ public class Reading implements Serializable {
 
     public void addCardMeanings(ArrayList<Card> pickedCards, Spread spread) {
         for (Card c: pickedCards){
-            this.reading.add(c.getMeaning(spread.getRequiredMeaningType()));
+            if(c.isReversed()){
+                this.reading.add(c.getName() + " (Reversed): " + c.getMeaning(spread.getRequiredMeaningType()));
+            }else{
+                this.reading.add(c.getName() + " (Upright): " + c.getMeaning(spread.getRequiredMeaningType()));
+            }
         }
     }
 
