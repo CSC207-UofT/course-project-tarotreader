@@ -1,11 +1,35 @@
 import entities.Spread;
 import org.junit.Test;
+import useCases.SpreadInit;
+
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class SpreadTest {
 
+    @Test
+    public void TestSpreadInit() throws Spread.WrongSpreadType, IOException {
+        ArrayList<Spread> spreadList = SpreadInit.getSpreads();
+        assertEquals(4, spreadList.size());
+        assert(!spreadList.contains(null));
+    }
+    @Test
+    public void TestSpreadConstructor() throws Spread.WrongSpreadType {
+        Spread testSpread = new Spread("General Reading", "3");
+        assert(testSpread instanceof Spread);
+        assertEquals(3, testSpread.getNumCards());
+        assertEquals("General", testSpread.getRequiredMeaningType());
+        assertEquals("General Reading", testSpread.getSpreadName());
+    }
+    @Test
+    public void getSpreadContents() throws Spread.WrongSpreadType, IOException {
+        ArrayList<Spread> spreads = Spread.getSpreadList();
+        assertEquals(4, spreads.size());
+        assertEquals("General Reading", spreads.get(0).getSpreadName());
+    }
     @Test
     public void TestSpreadContents() {
         try{
@@ -51,4 +75,3 @@ public class SpreadTest {
 
     }
 }
-
