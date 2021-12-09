@@ -6,7 +6,7 @@ a regular playing deck, they are split up into 4 “suits”, pentacles, swords,
 Ace card, cards numbered 2 to 10, and a page, queen, and king card. Each card has a meaning associated with it, and 
 when cards are put together, meanings change, which can be interpreted as a fortune.
 
-This app will allow users to create an account, generate readings and interpretations with user-selected spread, look up references for card meanings, allow users to log software-generated readings, delete readings from the log, and allow users to see reading log associated with their account.
+This app will allow users to create an account, generate readings and interpretations with user-selected spread, accompanied by a visual GUI that displays visuals for the selected cards as well as their meanings in relation to the spread chosen, look up references for card meanings, allow users to log software-generated readings, delete readings from the log, and allow users to see reading log associated with their account.
 
 Type "help" for a list of commands. Commands include:
 - q: quits the program
